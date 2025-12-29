@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Confirmação Senha</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "background-light": "#fdfbf7", /* Updated to match user request */
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b130d] dark:text-[#fdfbf7] font-display antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col items-center justify-between p-6 md:p-8">
+<!-- Header / Logo Area -->
+<div class="flex w-full justify-center pt-4">
+<div class="flex items-center gap-2">
+<!-- Abstract Nest Logo using Material Symbol -->
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">nest_multi_room</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-[#1b130d] dark:text-white">Family Nest</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex w-full max-w-sm flex-col items-center gap-8">
+<!-- Hero Image/Illustration -->
+<div class="relative flex items-center justify-center w-full">
+<!-- Decorative background blob -->
+<div class="absolute inset-0 scale-110 rounded-full bg-primary/10 blur-2xl"></div>
+<div class="relative w-48 h-48 bg-center bg-no-repeat bg-cover rounded-full shadow-lg border-4 border-white dark:border-white/10" data-alt="Illustration of a cute 3D envelope flying with wings delivering a message" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_iSkr301c9_-knMFUqR5DU-xxw6mj5o1RDtRAyxQ5A2z3RNRnpKHyyiRp8UYZagQzHdBbJMlyFxgmWlEP0qK-aRxYNIVrN-1DX26xvZIRjjYDkZTADrZSg0jIqIOVezeN4lHTKCDwxUDOpY2TEFZS3VEgttcF9cZTW6n023cKdt-njTj6K9Vw5dMp1LmnI29RvX9Q-rQzIjF-RNtRm_4lg_PpORp4cLi3qF2tGA7TKwwhmoY5IgGhoN1OVSlLGB_USnbgxhUQe9CO");'>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center gap-3 text-center">
+<h1 class="text-2xl font-bold leading-tight tracking-tight text-[#1b130d] dark:text-white">
+                    Link Enviado!
+                </h1>
+<p class="text-base font-normal leading-relaxed text-gray-600 dark:text-gray-300">
+                    Verifique sua caixa de entrada! Enviamos um link seguro para você redefinir sua senha.
+                </p>
+<div class="flex items-start gap-2 rounded-lg bg-primary/5 p-4 mt-2 border border-primary/10">
+<span class="material-symbols-outlined text-primary text-xl shrink-0">info</span>
+<p class="text-xs font-medium text-gray-500 dark:text-gray-400 text-left leading-snug">
+                        Pode levar alguns minutos. Se não encontrar o email, verifique sua pasta de spam ou lixo eletrônico.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Footer / Action Area -->
+<div class="flex w-full max-w-sm flex-col gap-4 pb-4">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-full h-14 px-6 bg-primary hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 text-white text-base font-bold leading-normal tracking-wide">
+                Voltar ao Login
+            </button>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-transparent text-primary dark:text-primary hover:bg-primary/5 transition-colors text-sm font-semibold">
+                Reenviar email
+            </button>
+</div>
+</div>
+</body></html>

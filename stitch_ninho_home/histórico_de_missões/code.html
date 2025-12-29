@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Histórico de Missões</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "primary-dark": "#0a7a35",
+                        "secondary": "#e7f3ec",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#102217",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a3324",
+                        "text-main": "#0d1b13",
+                        "text-muted": "#4c9a6b",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(19, 236, 106, 0.1)',
+                        'card': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden border-x border-black/5 dark:border-white/5">
+<!-- Top App Bar -->
+<div class="flex flex-col gap-2 p-4 pb-2 sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm transition-colors">
+<div class="flex items-center h-12 justify-between">
+<button aria-label="Voltar" class="text-text-main dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-secondary dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center justify-end gap-2">
+<button aria-label="Filtrar" class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-transparent text-text-main dark:text-white hover:bg-secondary dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button aria-label="Notificações" class="relative flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-transparent text-text-main dark:text-white hover:bg-secondary dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-3 right-3 size-2 bg-primary rounded-full ring-2 ring-background-light dark:ring-background-dark"></span>
+</button>
+</div>
+</div>
+<h1 class="text-text-main dark:text-white tracking-tight text-[32px] font-bold leading-tight mt-2 pl-2">Histórico de Missões</h1>
+</div>
+<!-- Search Bar -->
+<div class="px-6 py-2 sticky top-[120px] z-10 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col h-12 w-full shadow-card rounded-xl">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-surface-light dark:bg-surface-dark overflow-hidden ring-1 ring-black/5 dark:ring-white/10 focus-within:ring-2 focus-within:ring-primary transition-all">
+<div class="text-text-muted flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-main dark:text-white placeholder:text-text-muted/70 px-0 text-base font-normal leading-normal border-none focus:ring-0 focus:outline-none h-full" placeholder="Buscar por missão ou membro..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-6 py-4 overflow-x-auto no-scrollbar mask-linear-gradient">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-text-main shadow-soft px-5 transition-transform active:scale-95">
+<p class="text-sm font-bold leading-normal">Todos</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark ring-1 ring-black/5 dark:ring-white/10 px-5 transition-transform active:scale-95 hover:bg-secondary dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-[18px]">cleaning_services</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal">Limpeza</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark ring-1 ring-black/5 dark:ring-white/10 px-5 transition-transform active:scale-95 hover:bg-secondary dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-[18px]">skillet</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal">Culinária</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark ring-1 ring-black/5 dark:ring-white/10 px-5 transition-transform active:scale-95 hover:bg-secondary dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-[18px]">potted_plant</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal">Jardim</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark ring-1 ring-black/5 dark:ring-white/10 px-5 transition-transform active:scale-95 hover:bg-secondary dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-[18px]">pets</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal">Pets</p>
+</button>
+</div>
+<!-- Monthly Summary Headline -->
+<div class="flex items-center justify-between px-6 py-2">
+<h2 class="text-text-main dark:text-white text-lg font-bold">Hoje</h2>
+<span class="text-xs font-semibold bg-primary/20 text-primary-dark dark:text-primary px-3 py-1 rounded-full">4 completas</span>
+</div>
+<!-- Timeline Content -->
+<div class="flex-1 overflow-y-auto px-6 pb-24">
+<!-- Item 1: Cooking -->
+<div class="grid grid-cols-[48px_1fr] gap-x-3 mb-1">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-[#FFE8D6] dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 ring-4 ring-background-light dark:ring-background-dark z-10">
+<span class="material-symbols-outlined">soup_kitchen</span>
+</div>
+<div class="w-[2px] bg-secondary dark:bg-white/10 h-full -mt-2 rounded-b-full"></div>
+</div>
+<div class="pb-6">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-card ring-1 ring-black/5 dark:ring-white/5 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-text-main dark:text-white text-base font-bold leading-tight">Jantar em Família</h3>
+<p class="text-text-muted text-xs font-medium mt-1">20:00 • Cozinha</p>
+</div>
+<div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary-dark dark:text-primary text-[16px]">bolt</span>
+<span class="text-primary-dark dark:text-primary text-xs font-bold">+100 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-black/5 dark:border-white/5">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full ring-2 ring-white dark:ring-surface-dark overflow-hidden bg-blue-100" title="Pai">
+<img alt="Avatar Pai" class="h-full w-full object-cover" data-alt="Avatar de homem sorrindo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPSaDAi2hoaws_mRwOvn5Hld8Q1x3pF7vIieAOwTeJEDUcFg21QQsigmTB93VyBE3j3x7PdDfi3SYs4SixuJBBTdifZlDA-brJIq_u0G17f2513qEhf3sU4a4OAOUVaxj5_lNuL_aWBUPvoEwUNzkD_KBAQy0-Zu4f15lJIkwfIrb6Gt83LIDNsA4n7jC_tR77ZJPRoFTPbdAzOLA7Qayo-yVXGRn3t-26H31Mxj95X8H-SMijN1P0mEw0er447bO73GFA9aYxNX3H"/>
+</div>
+<div class="size-8 rounded-full ring-2 ring-white dark:ring-surface-dark overflow-hidden bg-pink-100" title="Mãe">
+<img alt="Avatar Mãe" class="h-full w-full object-cover" data-alt="Avatar de mulher jovem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNsPEbRfdEUsBsy_l5KcxDjZQVY3V5KAUh42btatlB25gUBQgQnyN_UoGV2r2F8FOXJhV7yAdqkSVsJdQgfwRGJaDxu8zYQ0cvQRqLZ6Fm9_fcil2Ltf3x4NF6Ly2PjwliNkrrChAbPPGI9SIwPjaTiBVXYeMxRMcCtQSoTJcGODbkOWmSJbgPZYqpT9INx1QGU1TIuPXmboTg4z307spbKQUS8eqV_r4W2KvYoIK8M4cNhB4Td7mqzIjNnq51Sfr8pvSNiA4R-uqO"/>
+</div>
+</div>
+<span class="text-xs text-text-muted font-medium">Cooperativo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Pets -->
+<div class="grid grid-cols-[48px_1fr] gap-x-3 mb-1">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-[#E0F4FF] dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 ring-4 ring-background-light dark:ring-background-dark z-10">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<div class="w-[2px] bg-secondary dark:bg-white/10 h-full -mt-2 rounded-full"></div>
+</div>
+<div class="pb-6">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-card ring-1 ring-black/5 dark:ring-white/5 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-text-main dark:text-white text-base font-bold leading-tight">Passear com o Dog</h3>
+<p class="text-text-muted text-xs font-medium mt-1">17:30 • Rua</p>
+</div>
+<div class="flex items-center gap-1 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-yellow-700 dark:text-yellow-400 text-[16px]">battery_charging_full</span>
+<span class="text-yellow-700 dark:text-yellow-400 text-xs font-bold">+50 Energia</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-black/5 dark:border-white/5">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full ring-2 ring-white dark:ring-surface-dark overflow-hidden bg-green-100" title="Filho">
+<img alt="Avatar Filho" class="h-full w-full object-cover" data-alt="Avatar de jovem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdFjWzjF3E_AqTtWysH88mqHV0Q3q87fv-G0FnfC03e6iNYsKwp_NywO3XqY7Cg7RjSRDuREsjlyudNntlvtP6JKnzeg3aQqAATMU0p13zmw8r3VWMGhTVaab0GuaIJmrslidXPfknD54qT-jzingWc54OzzEgQ7RhWr422T0BgYV9RXzRL9gBFi_2xvFUeG7lDUDiC2SEoOONDs4H5wqDwWi-OxC7UpGELp1LwcT8969i1yf0utBWOB9kW0JwaNriBmMldOMfBzwa"/>
+</div>
+</div>
+<span class="text-xs text-text-muted font-medium">Individual</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Yesterday Section -->
+<div class="flex items-center justify-between py-4">
+<h2 class="text-text-main dark:text-white text-lg font-bold">Ontem</h2>
+<span class="text-xs text-text-muted">12 de Outubro</span>
+</div>
+<!-- Item 3: Dishes -->
+<div class="grid grid-cols-[48px_1fr] gap-x-3 mb-1">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-[#E7F3EC] dark:bg-green-900/30 text-green-700 dark:text-green-300 ring-4 ring-background-light dark:ring-background-dark z-10">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="w-[2px] bg-secondary dark:bg-white/10 h-full -mt-2 rounded-full"></div>
+</div>
+<div class="pb-6">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-card ring-1 ring-black/5 dark:ring-white/5 flex flex-col gap-3 opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-text-main dark:text-white text-base font-bold leading-tight">Lavar a Louça</h3>
+<p class="text-text-muted text-xs font-medium mt-1">13:00 • Cozinha</p>
+</div>
+<div class="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-primary-dark dark:text-primary text-[16px]">bolt</span>
+<span class="text-primary-dark dark:text-primary text-xs font-bold">+30 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-black/5 dark:border-white/5">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full ring-2 ring-white dark:ring-surface-dark overflow-hidden bg-blue-100" title="Pai">
+<img alt="Avatar Pai" class="h-full w-full object-cover" data-alt="Avatar de homem sorrindo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjj1g_hXlhCzBIqVTt-B2zewRPjU6_Ii31-_T_2CGpjBUx44Jb8rmacwlcjlkEpQG9As9J6uH-CZCfCBIkSphwWoesd9hhqKc05aYCVcjiGCaVpI_4I-NfvVrY3kM2Nmb5jTwnUqXcScUw6-owAQMQ6P7AEOqiDcIkbCPqjvb6kp19VoeB8d9rOIdMYinDfhfRdFDOzNM6_6tWMVHZTgz11s2GJRL_WrXWXo24gF2fwr3LtGp6Uwsz4wQm5hoLiG-1TeyrPrkTJAAt"/>
+</div>
+</div>
+<span class="text-xs text-text-muted font-medium">Individual</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Toys -->
+<div class="grid grid-cols-[48px_1fr] gap-x-3">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-[#F3E5F5] dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 ring-4 ring-background-light dark:ring-background-dark z-10">
+<span class="material-symbols-outlined">toys</span>
+</div>
+<!-- End of timeline fade out -->
+<div class="w-[2px] bg-gradient-to-b from-secondary to-transparent dark:from-white/10 dark:to-transparent h-full -mt-2 rounded-full"></div>
+</div>
+<div class="pb-6">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-card ring-1 ring-black/5 dark:ring-white/5 flex flex-col gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-text-main dark:text-white text-base font-bold leading-tight">Arrumar Brinquedos</h3>
+<p class="text-text-muted text-xs font-medium mt-1">10:00 • Sala</p>
+</div>
+<div class="flex items-center gap-1 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-yellow-700 dark:text-yellow-400 text-[16px]">battery_charging_full</span>
+<span class="text-yellow-700 dark:text-yellow-400 text-xs font-bold">+20 Energia</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-black/5 dark:border-white/5">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full ring-2 ring-white dark:ring-surface-dark overflow-hidden bg-green-100" title="Filho">
+<img alt="Avatar Filho" class="h-full w-full object-cover" data-alt="Avatar de jovem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3IMbm45Uh6OGcacFeDtLPXIOr5Gqsdr03sCXDrKIweqB8tIN7nbwxAMiyp8Nn6JxJu9A5NNsYdMDWenuDzrGIY7zr-8DqxcJOu0JB06RqyEW8t-Tw07-_UTgMhDeyTr7u6_bKJsXN5T4SLs9IQ-ofy7n7JVBGp-sa9RK4K7R16UEU5fBkCSaJGzmOFRCdG6pDIpwO0X2onFrH0dPaHbPIxkva0qzd6ayLnPxcX4xLXzbz7Pjp-6N1497DyVljrmUzmXv3ygn3Ulix"/>
+</div>
+</div>
+<span class="text-xs text-text-muted font-medium">Individual</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="mt-4 p-5 bg-gradient-to-br from-primary/10 to-transparent dark:from-primary/5 rounded-2xl border border-primary/20 flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-full text-primary-dark dark:text-primary">
+<span class="material-symbols-outlined text-[28px]">trophy</span>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white font-bold text-lg">Resumo do Mês</h3>
+<p class="text-text-muted text-sm">Você completou 12 missões a mais que no mês passado!</p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 w-full max-w-md bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-xl border-t border-black/5 dark:border-white/5 pb-5 pt-3 px-6 z-50">
+<div class="flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Início</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="text-[10px] font-medium">Missões</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary transition-colors">
+<span class="material-symbols-outlined fill-current">history</span>
+<span class="text-[10px] font-bold">Histórico</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

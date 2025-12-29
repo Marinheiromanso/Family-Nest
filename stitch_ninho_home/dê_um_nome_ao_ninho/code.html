@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dê um Nome ao Ninho</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#36e27b",
+                        "background-light": "#fdfbf7", /* User requested specific background */
+                        "background-dark": "#112117",
+                        "text-main": "#0e1b13",
+                        "text-sub": "#4a5950"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl shadow-black/5">
+<!-- Header / Navigation -->
+<div class="flex items-center px-6 pt-6 pb-2 justify-between">
+<button class="flex size-10 items-center justify-center rounded-full text-text-main hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<!-- Page Indicators: Step 2 of 4 -->
+<div class="flex items-center justify-center gap-2">
+<div class="h-2 w-2 rounded-full bg-[#d1e6d9]"></div>
+<div class="h-2 w-8 rounded-full bg-primary transition-all duration-300"></div> <!-- Active step elongated -->
+<div class="h-2 w-2 rounded-full bg-[#d1e6d9]"></div>
+<div class="h-2 w-2 rounded-full bg-[#d1e6d9]"></div>
+</div>
+<!-- Spacer for visual balance -->
+<div class="size-10"></div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-6">
+<!-- Illustration -->
+<div class="py-6 flex justify-center">
+<div class="relative w-full aspect-[4/3] max-h-[260px] overflow-hidden rounded-xl">
+<div class="absolute inset-0 bg-center bg-contain bg-no-repeat" data-alt="Illustration of a cute stylized bird nest made of twigs and leaves, empty and waiting for a name" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTirKGmZtsF-45fgdUVeNITHwvltzAW00GR7nEdGUyTycPAPIn_2G6zD1x4UXC3IT4OuCeqpPtl_GerPVc81_U9rAIHteEwUtXpEgFGMUB2yG12heXWTuB6O-UL9v80SegkZsgTm66hFqOX6k3Pl93-HSoKQ3cjkrDGOUfpoMsYfvI5-opTvtijLwSNsi9rBoAbigtHkpSUC4btiECKbXg2uUPCFZ1r5vA0Pob1SMvcJlGA-pSzpH1JOFoMGyS8U3UpH5Rl-DujKvD"); background-position: center bottom;'></div>
+<!-- Gradient overlay for smoother transition if needed -->
+<div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background-light to-transparent dark:from-background-dark"></div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center space-y-3 mb-8">
+<h1 class="text-text-main dark:text-white text-[28px] font-bold leading-tight tracking-tight">
+                    Dê um nome ao seu Ninho
+                </h1>
+<p class="text-text-sub dark:text-gray-400 text-base font-normal leading-relaxed max-w-xs mx-auto">
+                    Todo lar especial merece um nome único. Pode ser o sobrenome da família ou um apelido carinhoso.
+                </p>
+</div>
+<!-- Form -->
+<div class="w-full space-y-6">
+<div class="group relative">
+<label class="sr-only" for="nest-name">Nome do Ninho</label>
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">home</span>
+</div>
+<input class="block w-full rounded-full border-0 py-4 pl-12 pr-4 text-text-main shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-lg sm:leading-6 bg-white dark:bg-white/5 dark:ring-white/10 dark:text-white transition-shadow" id="nest-name" name="nest-name" placeholder="Ex: Ninho dos Silva" type="text"/>
+</div>
+</div>
+<!-- Spacer to push button to bottom on tall screens -->
+<div class="flex-1"></div>
+<!-- Actions -->
+<div class="py-8 w-full">
+<button class="w-full rounded-full bg-primary py-4 px-4 text-white shadow-lg shadow-primary/30 hover:bg-primary/90 hover:shadow-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200 transform active:scale-[0.98] flex items-center justify-center gap-2 font-bold text-lg">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+</body></html>

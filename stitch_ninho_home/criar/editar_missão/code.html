@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Criar Missão</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#36e27b",
+              "background-light": "#fdfbf7",
+              "background-dark": "#112117",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1a2c20",
+              "input-bg": "#f0ede6", 
+              "warm-gray": "#efece6"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0e1b13] dark:text-white font-display overflow-hidden selection:bg-primary selection:text-background-dark">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="flex items-center px-6 py-4 justify-between bg-background-light dark:bg-background-dark z-10 sticky top-0">
+<button class="text-[#0e1b13] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</button>
+<h2 class="text-[#0e1b13] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Nova Missão</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="text-[#0e1b13] dark:text-white flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 p-2 transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar pb-28">
+<div class="px-6 pt-2 pb-6">
+<label class="flex flex-col gap-3">
+<div class="flex justify-between items-center px-1">
+<span class="text-[#0e1b13] dark:text-gray-200 text-base font-bold leading-normal">O que precisa ser feito?</span>
+<div class="bg-primary/20 text-green-800 dark:text-green-300 px-3 py-1 rounded-full flex items-center gap-1 text-xs font-bold border border-primary/30 shadow-sm">
+<span class="material-symbols-outlined text-[16px] fill-1">bolt</span>
+                        +50 XP
+                    </div>
+</div>
+<div class="flex w-full items-stretch rounded-2xl shadow-sm transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 dark:focus-within:ring-offset-background-dark">
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-2xl text-[#0e1b13] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-surface-dark h-16 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-5 pr-2 text-lg font-medium leading-normal shadow-soft" placeholder="Ex: Lavar a louça..." type="text" value="Passear com o cachorro"/>
+<div class="flex bg-white dark:bg-surface-dark items-center justify-center pr-4 rounded-r-2xl">
+<span class="material-symbols-outlined text-gray-400">edit</span>
+</div>
+</div>
+</label>
+</div>
+<div class="px-6 mb-8">
+<div class="bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20 rounded-2xl p-4 flex items-start gap-3 relative overflow-hidden shadow-sm">
+<div class="absolute -right-4 -top-6 text-orange-200/50 dark:text-orange-900/20 pointer-events-none">
+<span class="material-symbols-outlined text-[100px]">auto_awesome</span>
+</div>
+<div class="bg-orange-100 dark:bg-orange-800 text-orange-600 dark:text-orange-200 rounded-full p-2 shrink-0 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex-1 relative z-10">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs font-bold text-orange-800 dark:text-orange-200 uppercase tracking-wide">Sugestão do Ninho</p>
+<button class="text-orange-400 hover:text-orange-600 dark:hover:text-orange-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="text-sm text-[#0e1b13] dark:text-gray-200 leading-snug mb-3">
+                        O <strong>Leo</strong> não tem missões hoje e precisa de XP para subir de nível.
+                    </p>
+<button class="text-xs font-bold text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 px-4 py-2 rounded-lg transition-all shadow-sm shadow-orange-500/20 flex items-center gap-1 w-fit">
+                        Aceitar sugestão
+                        <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-6 mb-8">
+<div class="flex items-center justify-between mb-3 px-1">
+<label class="text-[#0e1b13] dark:text-gray-200 text-base font-bold">Atribuição</label>
+</div>
+<div class="bg-warm-gray dark:bg-surface-dark/50 p-1.5 rounded-2xl flex gap-1 mb-6">
+<button class="flex-1 flex flex-col items-center justify-center gap-1 py-3 rounded-xl bg-white dark:bg-surface-dark shadow-sm text-[#0e1b13] dark:text-white border border-black/5 dark:border-white/5 transition-all">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+<span class="text-xs font-bold">Atribuir a</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-1 py-3 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-white/60 dark:hover:bg-white/5 transition-all group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-gray-700 dark:group-hover:text-gray-300">group</span>
+<span class="text-xs font-medium">Compartilhar</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-1 py-3 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-white/60 dark:hover:bg-white/5 transition-all group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-gray-700 dark:group-hover:text-gray-300">emoji_events</span>
+<span class="text-xs font-medium">Aberto</span>
+</button>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="flex flex-col items-center gap-2 group opacity-60 hover:opacity-100 transition-all">
+<div class="relative size-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-gray-300 dark:group-hover:border-gray-600 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVDbRfdgGckY8pOKnYJgFu9DzRc8D8ScqPqKjA_DJyib-2UJ8OpXaOlm_UqlW_EvbsxdB9It4bA4nO_5pSqKd1ejf5HB1iG6GqJg0lMNJ6acS_tdVAsFHxinfH5lVjPRU4SbNMvet9W1Gqyz65NdHWGR9Sir3gQIxjevcIW6MGdFc7T2tMVYHOAxGBMT46yyL9qTV0aaqECbHTPq48GjF0DzOrqi76GVXOwDEbC1JNuxzUDLK0gXNbwdw2-rattIDZ4sfai5FC7gPx");'></div>
+</div>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-[#0e1b13] dark:group-hover:text-white transition-colors">Mãe</span>
+</button>
+<button class="flex flex-col items-center gap-2 group opacity-60 hover:opacity-100 transition-all">
+<div class="relative size-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-gray-300 dark:group-hover:border-gray-600 transition-all">
+<div class="w-full h-full rounded-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMMV6qOh8OxcRljK8ejxsC4vi6tJihIXdsytQIAaaJpv7kPtIyIm4mfun7w86AYcoW9H4xfHKVD2-lJBf3npbx1rQx9c6Mc23DSy_vJFuA9Aj6W2syzywYHwEHzFnMHk7s5xd6wL7ss7U3GUJOC3dj-TCC4wBRGpdxrLWqUsUq-vnfcmyhD2d7TP3iftqWyAbqCnmVa0RbBJL4BFmH1e01Ox1FZ_Au7NBdL_rBR3SqD5KGY6lb6h3fKzGw2gxr_rO9bUsyUzsDxBpA");'></div>
+</div>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-[#0e1b13] dark:group-hover:text-white transition-colors">Pai</span>
+</button>
+<button class="flex flex-col items-center gap-2 group relative">
+<div class="absolute -top-2 scale-100 transition-transform z-20">
+<div class="bg-primary text-[#0e1b13] text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm border border-white dark:border-background-dark">
+                            Escolhido
+                        </div>
+</div>
+<div class="relative size-16">
+<div class="absolute inset-0 rounded-full border-[3px] border-primary z-10"></div>
+<div class="absolute bottom-0 right-0 bg-primary text-[#0e1b13] rounded-full size-5 flex items-center justify-center z-20 shadow-sm border-[1.5px] border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="size-full rounded-full overflow-hidden bg-gray-200 border-2 border-white dark:border-surface-dark">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVt_W33wTCoOZo9-WRqmbvntrwspB64AQmczAkagTBbVQ14yGu0fVnbzfPtVR10JkhwHrriB8Lxqq912LbmOR4-5NmHGzV-jur6SdTfY8EFq3IJu6SF6sdRcrQNFqv5syezO5vVYzI2l8ZPFUSRpEV8LrOTDLy86VubSS8WG1ocKy6dtlVlhgp4HuPUJr99EBilVvO6xs9sNnKJzMF0v5HHvdLMTt8FID1UKqCCkpUoWu_dOGZhS31tCZsp1-Ebs0Y_csyy8hK5Irj");'></div>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">Leo</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-16 rounded-full bg-white dark:bg-white/5 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 group-hover:border-primary group-hover:text-primary transition-colors text-gray-400 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Novo</span>
+</button>
+</div>
+<p class="mt-4 text-xs text-center text-gray-400 dark:text-gray-500">
+                A missão aparecerá na lista de <strong>Leo</strong>.
+            </p>
+</div>
+<div class="h-px bg-gray-200 dark:bg-white/5 mx-6 mb-6"></div>
+<div class="px-6 space-y-6">
+<div>
+<p class="text-[#0e1b13] dark:text-gray-200 text-base font-bold leading-normal mb-3 px-1">Frequência</p>
+<div class="flex p-1.5 bg-warm-gray dark:bg-surface-dark/50 rounded-2xl">
+<button class="flex-1 py-2.5 text-sm font-bold text-[#0e1b13] bg-white dark:bg-primary dark:text-background-dark rounded-xl shadow-sm transition-all border border-black/5 dark:border-transparent">
+                        Única
+                    </button>
+<button class="flex-1 py-2.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#0e1b13] dark:hover:text-white transition-colors">
+                        Diária
+                    </button>
+<button class="flex-1 py-2.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#0e1b13] dark:hover:text-white transition-colors">
+                        Semanal
+                    </button>
+</div>
+</div>
+<div class="flex items-center justify-between bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-soft border border-transparent hover:border-primary/20 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-green-700 dark:text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0e1b13] dark:text-white">Horário sugerido</span>
+<span class="text-xs text-gray-500">Sem horário definido</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex gap-4 opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex-1 bg-white dark:bg-surface-dark px-4 py-3 rounded-2xl shadow-soft flex items-center justify-between">
+<span class="text-xs text-gray-500 font-medium">Categoria</span>
+<span class="text-sm font-bold text-[#0e1b13] dark:text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-blue-500">pets</span>
+                        Pets
+                    </span>
+</div>
+</div>
+</div>
+<div class="h-8"></div>
+</main>
+<div class="absolute bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-6 border-t border-gray-200/50 dark:border-white/5 z-20">
+<button class="w-full h-14 bg-primary hover:bg-[#2fd46f] active:scale-[0.98] transition-all rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-primary/25 group">
+<span class="text-[#0e1b13] text-lg font-bold tracking-tight">Salvar no Ninho</span>
+<span class="material-symbols-outlined text-[#0e1b13] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+
+</body></html>

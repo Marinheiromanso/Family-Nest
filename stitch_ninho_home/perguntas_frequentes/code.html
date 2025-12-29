@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perguntas Frequentes - Family Nest</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "primary-light": "#fff0e0",
+                        "background-nest": "#fdfbf7",
+                        "text-main": "#4a3b32",
+                        "text-secondary": "#8c7e72",
+                        "card-bg": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for chips */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        body {
+            background-color: #fdfbf7;
+        }
+
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display text-text-main antialiased bg-background-nest selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-nest">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-nest/95 backdrop-blur-sm pt-safe-top">
+<div class="flex items-center justify-between p-4 pb-2">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm hover:bg-gray-50 text-text-main transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="text-text-main text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">
+                    Ajuda
+                </h1>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Intro & Search -->
+<div class="px-5 pt-2 pb-6">
+<h2 class="text-2xl font-bold text-text-main mb-4">Como podemos ajudar o seu Ninho?</h2>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">search</span>
+</div>
+<input class="block w-full rounded-full border-none bg-white py-4 pl-12 pr-4 text-text-main placeholder:text-text-secondary shadow-sm ring-1 ring-black/5 focus:ring-2 focus:ring-primary focus:bg-white transition-all text-base" placeholder="Buscar dúvidas (ex: pontos, convite)" type="text"/>
+</div>
+</div>
+<!-- Categories Chips -->
+<div class="flex gap-3 px-5 pb-6 overflow-x-auto no-scrollbar snap-x">
+<!-- Active Chip -->
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 shadow-md shadow-primary/20 transition-transform active:scale-95">
+<span class="text-white text-sm font-bold">Geral</span>
+</button>
+<!-- Inactive Chips -->
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-transparent px-5 shadow-sm hover:border-primary/30 transition-all active:scale-95">
+<span class="text-text-main text-sm font-medium">Missões</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-transparent px-5 shadow-sm hover:border-primary/30 transition-all active:scale-95">
+<span class="text-text-main text-sm font-medium">Membros</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-transparent px-5 shadow-sm hover:border-primary/30 transition-all active:scale-95">
+<span class="text-text-main text-sm font-medium">Conta</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-transparent px-5 shadow-sm hover:border-primary/30 transition-all active:scale-95">
+<span class="text-text-main text-sm font-medium">Técnico</span>
+</button>
+</div>
+<!-- Accordion List -->
+<div class="px-5 flex flex-col gap-4">
+<h3 class="text-sm font-bold text-text-secondary uppercase tracking-wider ml-1">Perguntas Frequentes</h3>
+<!-- FAQ Item 1 -->
+<details class="group rounded-2xl bg-white shadow-sm ring-1 ring-black/5 open:ring-primary/20 open:shadow-md transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 text-text-main font-semibold select-none">
+<span>Como adiciono um novo membro?</span>
+<div class="flex items-center justify-center rounded-full bg-primary-light text-primary size-8 transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</summary>
+<div class="px-5 pb-5 text-text-secondary leading-relaxed text-sm">
+<p>É super fácil! Vá até a aba <strong>Família</strong> no menu inferior, toque no botão de <span class="inline-flex items-center justify-center size-5 rounded-full bg-primary text-white text-[10px] align-middle material-symbols-outlined">add</span> e compartilhe o "Código do Ninho" com quem você quer convidar. Eles só precisam inserir esse código ao criar a conta.</p>
+</div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group rounded-2xl bg-white shadow-sm ring-1 ring-black/5 open:ring-primary/20 open:shadow-md transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 text-text-main font-semibold select-none">
+<span>O que acontece se eu perder uma missão?</span>
+<div class="flex items-center justify-center rounded-full bg-primary-light text-primary size-8 transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</summary>
+<div class="px-5 pb-5 text-text-secondary leading-relaxed text-sm">
+<p>Não se preocupe! No Family Nest, ninguém fica para trás. Missões não completadas voltam para o quadro de "Pendências" e podem ser reagendadas ou completadas por outro membro da família para ganhar pontos bônus de cooperação.</p>
+</div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group rounded-2xl bg-white shadow-sm ring-1 ring-black/5 open:ring-primary/20 open:shadow-md transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 text-text-main font-semibold select-none">
+<span>Como ganho pontos de experiência (XP)?</span>
+<div class="flex items-center justify-center rounded-full bg-primary-light text-primary size-8 transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</summary>
+<div class="px-5 pb-5 text-text-secondary leading-relaxed text-sm">
+<p>Você ganha XP completando suas tarefas diárias, ajudando outros membros com as tarefas deles e mantendo sua sequência de dias (streak) ativa. Tarefas marcadas como "Difíceis" dão o dobro de XP!</p>
+</div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group rounded-2xl bg-white shadow-sm ring-1 ring-black/5 open:ring-primary/20 open:shadow-md transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 text-text-main font-semibold select-none">
+<span>Posso jogar offline?</span>
+<div class="flex items-center justify-center rounded-full bg-primary-light text-primary size-8 transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</summary>
+<div class="px-5 pb-5 text-text-secondary leading-relaxed text-sm">
+<p>Sim, parcialmente. Você pode marcar tarefas como concluídas enquanto estiver offline. Assim que você se reconectar à internet, o Ninho será sincronizado e seus pontos serão atualizados.</p>
+</div>
+</details>
+<!-- FAQ Item 5 -->
+<details class="group rounded-2xl bg-white shadow-sm ring-1 ring-black/5 open:ring-primary/20 open:shadow-md transition-all duration-300">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 text-text-main font-semibold select-none">
+<span>Esqueci minha senha, e agora?</span>
+<div class="flex items-center justify-center rounded-full bg-primary-light text-primary size-8 transition-transform duration-300 group-open:rotate-180 group-open:bg-primary group-open:text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</summary>
+<div class="px-5 pb-5 text-text-secondary leading-relaxed text-sm">
+<p>Na tela de login, toque em "Esqueci minha senha". Enviaremos um link de recuperação para o e-mail cadastrado. Se tiver problemas, fale com nosso suporte abaixo.</p>
+</div>
+</details>
+</div>
+<!-- Support CTA -->
+<div class="px-5 py-8 mt-2">
+<div class="bg-primary/10 rounded-3xl p-6 flex flex-col items-center text-center border border-primary/20">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center mb-3 text-primary">
+<span class="material-symbols-outlined" style="font-size: 24px;">support_agent</span>
+</div>
+<h3 class="text-text-main font-bold text-lg mb-2">Ainda precisa de ajuda?</h3>
+<p class="text-text-secondary text-sm mb-6 max-w-[260px]">Nossa equipe de suporte está pronta para resolver qualquer problema no seu Ninho.</p>
+<button class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-3.5 px-6 rounded-full shadow-lg shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+                        Falar com Suporte
+                    </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="sticky bottom-0 z-50 bg-white border-t border-gray-100 pb-safe-bottom">
+<div class="flex items-center justify-around h-16 px-2">
+<button class="flex flex-1 flex-col items-center justify-center gap-1 h-full text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">home</span>
+<span class="text-[10px] font-medium">Início</span>
+</button>
+<button class="flex flex-1 flex-col items-center justify-center gap-1 h-full text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">check_circle</span>
+<span class="text-[10px] font-medium">Missões</span>
+</button>
+<!-- Main Action Button -->
+<div class="relative -top-6">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</button>
+</div>
+<button class="flex flex-1 flex-col items-center justify-center gap-1 h-full text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 26px;">diversity_3</span>
+<span class="text-[10px] font-medium">Família</span>
+</button>
+<button class="flex flex-1 flex-col items-center justify-center gap-1 h-full text-primary transition-colors">
+<span class="material-symbols-outlined fill-current" style="font-size: 26px;">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

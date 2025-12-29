@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Missões do Dia - FAMILY NEST</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#8CB89F", // Soft, welcoming green
+              "primary-dark": "#6A967C",
+              "primary-light": "#E3F0E9",
+              "attention": "#E0A865", // Warm, cozy amber
+              "attention-light": "#FFF3E0",
+              "danger": "#D67C7C",
+              "background-light": "#FDFBF7", // Requested creamy off-white base
+              "background-dark": "#2C2A26", // Warm dark background
+              "surface-light": "#FFFFFF", // Clean white
+              "surface-dark": "#36332E", // Warm dark surface
+              "text-main": "#45413C", // Deep warm grey
+              "text-secondary": "#918B82", // Warm light grey
+              "accent-sand": "#F2EFE9", // Sand accent
+              "border-soft": "#EBE7DE", // Soft harmonized border
+              "card-hover": "#FAF9F6", // Very subtle hover state
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "3rem", "3xl": "4rem", "full": "9999px"},
+            boxShadow: {
+                "soft": "0 8px 30px -6px rgba(69, 65, 60, 0.06)",
+                "card": "0 4px 20px -4px rgba(69, 65, 60, 0.05)",
+                "card-hover": "0 10px 25px -5px rgba(69, 65, 60, 0.08)",
+                "glow": "0 0 20px rgba(140, 184, 159, 0.25)",
+                "warm": "0 4px 12px -2px rgba(224, 168, 101, 0.15)",
+                "fab": "0 8px 24px rgba(140, 184, 159, 0.4)"
+            },
+            animation: {
+                "bounce-slight": "bounce-slight 2s infinite"
+            },
+            keyframes: {
+                "bounce-slight": {
+                    "0%, 100%": { transform: "translateY(-5%)" },
+                    "50%": { transform: "translateY(0)" }
+                }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-[#E8E4DE] antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto overflow-x-hidden shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="flex items-center justify-between px-6 pt-12 pb-2">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-secondary dark:text-[#9E988E] mb-0.5">Missões de Hoje</span>
+<div class="flex items-center gap-2">
+<h2 class="text-2xl font-bold tracking-tight text-text-main dark:text-[#F2F0EB]">Família Silva</h2>
+<span class="material-symbols-outlined text-primary filled-icon text-[20px]">verified</span>
+</div>
+</div>
+<button class="relative flex items-center justify-center w-11 h-11 rounded-full bg-surface-light dark:bg-surface-dark border border-border-soft dark:border-[#423E38] shadow-sm text-text-main dark:text-[#F2F0EB] transition-transform hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-[#D67C7C] rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</button>
+</header>
+<main class="flex-1 flex flex-col relative pb-32">
+<section class="px-6 py-4">
+<div class="w-full bg-gradient-to-r from-surface-light to-accent-sand dark:from-white/5 dark:to-white/10 border border-white/60 dark:border-white/5 backdrop-blur-sm rounded-3xl p-4 flex items-center gap-4 shadow-sm">
+<div class="relative w-14 h-14">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-[#EBE7DE] dark:text-[#423E38]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary drop-shadow-[0_0_4px_rgba(140,184,159,0.5)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-[10px] font-bold text-text-secondary">Lvl</span>
+<span class="text-sm font-bold text-primary leading-none">5</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-bold text-text-main">Meta Diária</span>
+<span class="text-xs font-medium text-text-secondary">6/8 Missões</span>
+</div>
+<p class="text-xs text-text-secondary leading-tight">A família está a apenas 2 missões de desbloquear a "Noite da Pizza"!</p>
+</div>
+</div>
+</section>
+<section class="mb-2">
+<div class="flex gap-3 overflow-x-auto px-6 pb-4 no-scrollbar items-center">
+<button class="px-5 py-2.5 bg-text-main text-white rounded-2xl text-sm font-bold shadow-soft whitespace-nowrap transition-transform active:scale-95">
+                    Visão Geral
+                </button>
+<div class="h-6 w-px bg-border-soft dark:bg-white/10 mx-1"></div>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-border-soft dark:border-[#423E38] text-text-secondary dark:text-text-main rounded-2xl text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary transition-colors">
+<div class="w-5 h-5 rounded-full bg-primary/20 text-primary text-[10px] flex items-center justify-center font-bold">E</div>
+                    Eu
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-border-soft dark:border-[#423E38] text-text-secondary dark:text-text-main rounded-2xl text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary transition-colors">
+<div class="w-5 h-5 rounded-full bg-attention/20 text-attention text-[10px] flex items-center justify-center font-bold">M</div>
+                    Mãe
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-light dark:bg-surface-dark border border-border-soft dark:border-[#423E38] text-text-secondary dark:text-text-main rounded-2xl text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary transition-colors">
+<div class="w-5 h-5 rounded-full bg-[#D67C7C]/20 text-[#D67C7C] text-[10px] flex items-center justify-center font-bold">P</div>
+                    Pai
+                </button>
+</div>
+</section>
+<section class="px-6 mb-8">
+<h3 class="text-lg font-bold text-text-main dark:text-[#F2F0EB] mb-4 flex items-center gap-2">
+                Minhas Missões
+                <span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full">2 pendentes</span>
+</h3>
+<div class="flex flex-col gap-4">
+<div class="group bg-surface-light dark:bg-surface-dark rounded-[2rem] p-4 shadow-card hover:shadow-card-hover border border-border-soft/50 dark:border-[#423E38] transition-all duration-300">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-2xl bg-primary-light dark:bg-primary/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">bed</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-[#F2F0EB] text-base leading-snug">Arrumar a Cama</h4>
+<p class="text-xs text-text-secondary mt-0.5">Antes do café da manhã</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-attention-light dark:bg-attention/20 text-attention text-[10px] font-bold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[12px] filled-icon">schedule</span>
+                            Pendente
+                        </span>
+</div>
+<div class="flex items-center justify-between gap-4 mt-2">
+<div class="flex -space-x-2 pl-1">
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-primary text-white flex items-center justify-center text-[10px] font-bold" title="Eu">EU</div>
+</div>
+<button class="flex-1 h-11 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all active:scale-95 group-hover:scale-[1.02]">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                            Feito!
+                        </button>
+</div>
+</div>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-[2rem] p-4 shadow-card hover:shadow-card-hover border border-border-soft/50 dark:border-[#423E38] transition-all duration-300">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-2xl bg-[#FEF2F2] dark:bg-[#452b2b] text-danger flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">pets</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-[#F2F0EB] text-base leading-snug">Ração do Rex</h4>
+<p class="text-xs text-text-secondary mt-0.5">Manhã</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-[#FEF2F2] dark:bg-[#452b2b] text-danger text-[10px] font-bold uppercase tracking-wide">
+<span class="material-symbols-outlined text-[12px] filled-icon">warning</span>
+                            Atrasado
+                        </span>
+</div>
+<div class="flex items-center justify-between gap-4 mt-2">
+<div class="flex -space-x-2 pl-1">
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-primary text-white flex items-center justify-center text-[10px] font-bold" title="Eu">EU</div>
+</div>
+<button class="flex-1 h-11 bg-text-main hover:bg-black text-white rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">check</span>
+                            Feito
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 mb-8">
+<h3 class="text-lg font-bold text-text-main dark:text-[#F2F0EB] mb-4 flex items-center gap-2">
+                Compartilhadas
+                <span class="bg-accent-sand dark:bg-white/10 text-text-secondary text-[10px] px-2 py-0.5 rounded-full">Trabalho em equipe</span>
+</h3>
+<div class="group bg-surface-light dark:bg-surface-dark rounded-[2rem] p-4 shadow-card hover:shadow-card-hover border border-border-soft/50 dark:border-[#423E38] transition-all duration-300">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-2xl bg-attention-light dark:bg-attention/20 text-attention flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_florist</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-[#F2F0EB] text-base leading-snug">Jardim de Ervas</h4>
+<p class="text-xs text-text-secondary mt-0.5">Regar e podar juntos</p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-accent-sand dark:bg-white/5 flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">hourglass_empty</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4 mt-2">
+<div class="flex -space-x-2 pl-1">
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-primary text-white flex items-center justify-center text-[10px] font-bold">EU</div>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-attention text-white flex items-center justify-center text-[10px] font-bold">MÃE</div>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-surface-dark bg-surface-light text-text-secondary flex items-center justify-center text-[10px] font-bold">+1</div>
+</div>
+<button class="px-6 h-11 bg-accent-sand hover:bg-[#E6E1D6] dark:bg-[#423E38] dark:hover:bg-[#4E4942] text-text-main dark:text-[#CCC6BC] rounded-xl font-bold text-sm transition-all active:scale-95">
+                        Concluir
+                    </button>
+</div>
+</div>
+</section>
+<section class="px-6 mb-8">
+<h3 class="text-lg font-bold text-text-main dark:text-[#F2F0EB] mb-4 flex items-center gap-2">
+                Missões da Família
+                <span class="bg-accent-sand dark:bg-white/10 text-text-secondary text-[10px] px-2 py-0.5 rounded-full">Disponíveis</span>
+</h3>
+<div class="group bg-white/50 dark:bg-surface-dark/50 border border-dashed border-text-secondary/30 rounded-[2rem] p-4 transition-all duration-300 hover:bg-surface-light dark:hover:bg-surface-dark hover:border-solid hover:border-primary/30">
+<div class="flex justify-between items-center">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-white/5 text-text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-[#F2F0EB] text-sm">Tirar o Lixo</h4>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[12px] text-attention filled-icon">star</span>
+<span class="text-[10px] font-bold text-attention">+20 Pontos Extras</span>
+</div>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-border-soft flex items-center justify-center text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<div class="absolute bottom-24 right-6 z-40">
+<button class="group flex items-center justify-center w-14 h-14 bg-text-main text-white rounded-2xl shadow-fab hover:scale-110 active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<nav class="fixed bottom-0 w-full max-w-md bg-surface-light/90 dark:bg-surface-dark/95 backdrop-blur-xl border-t border-white/50 dark:border-[#423E38] pb-safe pt-2 px-6 shadow-[0_-8px_30px_-6px_rgba(69,65,60,0.04)] z-50 rounded-t-[2rem]">
+<div class="flex justify-between items-center h-16">
+<button class="flex flex-col items-center justify-center gap-1.5 w-14 h-14 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">home</span>
+<span class="text-[10px] font-bold">Início</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1.5 w-14 h-14 text-primary relative">
+<div class="absolute -top-1 w-8 h-1 bg-primary rounded-full shadow-glow"></div>
+<span class="material-symbols-outlined text-[26px] filled-icon">task_alt</span>
+<span class="text-[10px] font-bold">Tarefas</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1.5 w-14 h-14 text-text-secondary hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined text-[26px]">diversity_3</span>
+<span class="text-[10px] font-medium">Família</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1.5 w-14 h-14 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</button>
+</div>
+<div class="h-5 w-full"></div>
+</nav>
+</div>
+
+</body></html>

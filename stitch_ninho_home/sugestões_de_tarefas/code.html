@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sugestões de Tarefas - Family Nest</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#36e27b",
+                        "primary-dark": "#2ab863",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#112117",
+                        "surface": "#ffffff",
+                        "text-main": "#0e1b13",
+                        "text-muted": "#50956c",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(50, 50, 93, 0.04), 0 1px 8px -4px rgba(0, 0, 0, 0.02)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-text-main antialiased selection:bg-primary selection:text-white pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 backdrop-blur-sm border-b border-gray-100/50 transition-all duration-300">
+<div class="flex items-center px-4 py-3 justify-between h-[60px]">
+<button class="text-text-main flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<h1 class="text-text-main text-lg font-bold leading-tight tracking-tight flex-1 text-center">Sugestões de Tarefas</h1>
+<button class="flex h-10 items-center justify-end px-2 active:scale-95 transition-transform">
+<span class="text-text-muted text-base font-bold leading-normal tracking-wide">Cancelar</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-5 pt-4 pb-2">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-center rounded-2xl h-12 bg-white shadow-soft ring-1 ring-black/5 focus-within:ring-2 focus-within:ring-primary transition-all duration-200">
+<div class="text-text-muted flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full flex-1 bg-transparent border-none text-text-main placeholder:text-text-muted/70 focus:ring-0 text-base font-medium h-full px-2" placeholder="Buscar tarefa (ex: louça, lixo)..." value=""/>
+</div>
+</label>
+</div>
+<!-- Categories (Chips) -->
+<div class="w-full overflow-hidden py-4">
+<div class="flex gap-3 px-5 overflow-x-auto hide-scrollbar pb-2">
+<!-- Active Chip -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-6 shadow-md shadow-primary/20 active:scale-95 transition-transform">
+<p class="text-white text-sm font-bold leading-normal">Todos</p>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-5 shadow-sm ring-1 ring-black/5 hover:bg-gray-50 active:scale-95 transition-transform">
+<p class="text-text-main text-sm font-medium leading-normal">Cozinha</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-5 shadow-sm ring-1 ring-black/5 hover:bg-gray-50 active:scale-95 transition-transform">
+<p class="text-text-main text-sm font-medium leading-normal">Limpeza</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-5 shadow-sm ring-1 ring-black/5 hover:bg-gray-50 active:scale-95 transition-transform">
+<p class="text-text-main text-sm font-medium leading-normal">Pets</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-5 shadow-sm ring-1 ring-black/5 hover:bg-gray-50 active:scale-95 transition-transform">
+<p class="text-text-main text-sm font-medium leading-normal">Jardim</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white px-5 shadow-sm ring-1 ring-black/5 hover:bg-gray-50 active:scale-95 transition-transform">
+<p class="text-text-main text-sm font-medium leading-normal">Finanças</p>
+</button>
+</div>
+</div>
+<!-- Section: Populares -->
+<div class="flex flex-col gap-4">
+<div class="px-5 pt-2">
+<h2 class="text-text-main text-[22px] font-bold leading-tight tracking-tight">Populares</h2>
+<p class="text-text-muted text-sm font-medium mt-1">Tarefas mais frequentes da semana</p>
+</div>
+<div class="px-5 flex flex-col gap-3">
+<!-- Item 1 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">local_laundry_service</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Lavar a Louça</p>
+<p class="text-text-muted text-xs font-medium truncate">+50 XP • Diário</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-amber-100 text-amber-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">cleaning_services</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Varrer a Sala</p>
+<p class="text-text-muted text-xs font-medium truncate">+30 XP • Rápido</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-emerald-100 text-emerald-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">delete</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Tirar o Lixo</p>
+<p class="text-text-muted text-xs font-medium truncate">+20 XP • Urgente</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+</div>
+</div>
+<!-- Section: Cuidados com Pets -->
+<div class="flex flex-col gap-4 mt-6">
+<div class="px-5 pt-2">
+<h2 class="text-text-main text-[22px] font-bold leading-tight tracking-tight">Pets</h2>
+</div>
+<div class="px-5 flex flex-col gap-3">
+<!-- Item 4 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-orange-100 text-orange-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">pets</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Passear com o Dog</p>
+<p class="text-text-muted text-xs font-medium truncate">+100 XP • Aventura</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-purple-100 text-purple-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">cruelty_free</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Limpar Caixa de Areia</p>
+<p class="text-text-muted text-xs font-medium truncate">+40 XP • Diário</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+</div>
+</div>
+<!-- Section: Organização -->
+<div class="flex flex-col gap-4 mt-6 mb-8">
+<div class="px-5 pt-2">
+<h2 class="text-text-main text-[22px] font-bold leading-tight tracking-tight">Organização</h2>
+</div>
+<div class="px-5 flex flex-col gap-3">
+<!-- Item 6 -->
+<div class="flex items-center p-3 bg-white rounded-2xl shadow-soft ring-1 ring-black/5 hover:ring-primary/50 transition-all duration-200 group">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="flex items-center justify-center rounded-xl bg-rose-100 text-rose-600 shrink-0 size-12 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<div class="flex flex-col truncate">
+<p class="text-text-main text-base font-bold leading-snug truncate">Pagar Contas</p>
+<p class="text-text-muted text-xs font-medium truncate">+200 XP • Mensal</p>
+</div>
+</div>
+<button class="shrink-0 ml-3 bg-primary/10 hover:bg-primary text-primary-dark hover:text-white px-4 h-9 rounded-full text-sm font-bold transition-colors duration-200 flex items-center gap-1 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Adicionar
+                </button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (FAB) -->
+<div class="fixed bottom-6 right-5 z-40">
+<button class="flex items-center justify-center h-14 bg-text-main text-white rounded-full shadow-lg shadow-text-main/30 pr-6 pl-4 gap-2 hover:scale-105 active:scale-95 transition-transform duration-200 ring-2 ring-white">
+<span class="material-symbols-outlined text-[24px]">edit_square</span>
+<span class="font-bold text-sm tracking-wide">Criar Nova</span>
+</button>
+</div>
+<!-- Gradient Fade at bottom -->
+<div class="fixed bottom-0 left-0 w-full h-12 bg-gradient-to-t from-background-light to-transparent pointer-events-none z-30"></div>
+</body></html>

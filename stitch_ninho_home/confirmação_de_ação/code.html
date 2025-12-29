@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirmação de Ação - Family Nest</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "primary-dark": "#d96b1f",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                        "card-light": "#fdfbf7",
+                        "card-dark": "#2a2018",
+                        "text-main": "#1b130d",
+                        "text-secondary": "#594a42",
+                        "text-secondary-dark": "#bfb2aa",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-hidden relative selection:bg-primary/30">
+<!-- Simulated App Background Context -->
+<!-- This background represents the 'game' running behind the modal. It is blurred to focus attention on the confirmation. -->
+<div class="absolute inset-0 z-0 h-full w-full">
+<div class="relative h-full w-full bg-gray-200 dark:bg-gray-800">
+<img alt="Blurry home interior background with warm lighting" class="h-full w-full object-cover opacity-80" data-alt="Blurry home interior background with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO9NVlzpKT70-6jkWiV6IfNaMg8DNR-Z1mQnLzbPa1nJs578STnIA45_12XBvHod-Gfsy5bSAYhJwQ4HzIgUyRPiDV3R5W0Pl8kkxnZ2Vdvm32nGrJYukhGpAnSx-kOTx8octXfgMqEx9qC6EuftqAaHiBYnlZagTg_wX3hW5LP_ZYmnrFtw_lhxENxxK9e48xJWLpgVG6B0lBHLjElWpLCKUEHgqQ1kI0-Ix1rN81UUtHIKl17ZuTsXWQJG40x_QpdveVbfezEEmE"/>
+<div class="absolute inset-0 bg-background-light/40 dark:bg-background-dark/60 backdrop-blur-md"></div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="relative z-10 flex min-h-screen w-full flex-col items-center justify-center p-5">
+<!-- Confirmation Card -->
+<!-- Using #fdfbf7 (card-light) as requested for the warm cozy feel -->
+<div class="relative flex w-full max-w-[340px] flex-col items-center justify-center overflow-hidden rounded-[32px] bg-card-light dark:bg-card-dark p-6 shadow-2xl ring-1 ring-black/5 dark:ring-white/10 transition-all">
+<!-- Decorative Header Shape (Optional visual flair) -->
+<div class="absolute -top-16 -right-16 h-32 w-32 rounded-full bg-primary/5 dark:bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-primary/5 dark:bg-primary/10 blur-2xl pointer-events-none"></div>
+<!-- Dynamic Icon -->
+<div class="relative mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 text-primary">
+<span class="material-symbols-outlined !text-[40px] animate-pulse-slow font-variation-settings-'FILL'1">warning</span>
+</div>
+<!-- Content Area -->
+<div class="flex w-full flex-col items-center text-center">
+<!-- HeadlineText Component Style -->
+<h2 class="text-text-main dark:text-gray-100 tracking-tight text-[26px] font-bold leading-tight px-2 pb-3">
+                    Confirmar Ação?
+                </h2>
+<!-- BodyText Component Style -->
+<p class="text-text-secondary dark:text-text-secondary-dark text-base font-normal leading-relaxed pb-8 px-2">
+                    Esta ação não poderá ser desfeita e pode afetar a pontuação da família. Deseja realmente continuar com esta operação?
+                </p>
+<!-- Action Buttons Area -->
+<div class="flex w-full flex-col gap-3">
+<!-- Primary Button: Sim, Confirmar -->
+<button class="group relative flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary hover:bg-primary-dark transition-all duration-300 shadow-md shadow-primary/20 active:scale-[0.98]">
+<span class="relative z-10 text-[#1b130d] dark:text-white text-base font-bold leading-normal tracking-[0.015em]">
+                            Sim, Confirmar
+                        </span>
+<!-- Subtle shine effect on hover -->
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</button>
+<!-- Secondary Button: Cancelar -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-transparent hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200 active:scale-[0.98]">
+<span class="truncate text-text-main dark:text-gray-300 text-sm font-bold leading-normal tracking-[0.015em]">
+                            Cancelar
+                        </span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom spacing for mobile ease -->
+<div class="h-8"></div>
+</div>
+</body></html>

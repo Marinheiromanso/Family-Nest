@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lembrete Inteligente Família</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19a1e6",
+                        "background-light": "#fdfbf7", // Warm cream requested by user
+                        "background-dark": "#111c21",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2932",
+                        "text-main": "#0e171b",
+                        "text-secondary": "#4e7f97",
+                        "nest-orange": "#F4A261",
+                        "nest-green": "#2A9D8F",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main transition-colors duration-200">
+<!-- Main Container -->
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto overflow-x-hidden shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Dicas do Ninho</h2>
+<!-- Hidden placeholder for alignment if needed -->
+</div>
+<!-- Hero / Nest Pulse Section -->
+<div class="px-4 pt-4 pb-6 flex flex-col items-center justify-center text-center">
+<div class="relative mb-4">
+<!-- Abstract Nest Avatar -->
+<div class="w-24 h-24 rounded-full bg-gradient-to-tr from-[#19a1e6] to-[#6dd5ed] p-1 shadow-lg flex items-center justify-center animate-pulse">
+<div class="w-full h-full bg-white dark:bg-surface-dark rounded-full flex items-center justify-center overflow-hidden" data-alt="Illustration of a cute bird nest icon representing the app AI" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkXSaE9PvGde_TP4p3VrVAtJJvDao-ASzYAyFDLywPD9JDJoDW3QR6_RCZdM2hiZXvEK9V0TyqbBB415KNC2tkc3Edk8WLiyVtwXbm3BxuzsU5EQgOfUoCh58Y3Gi9FEFRkBUH1ZD6uGTn-eVsSIByxUtJAR3UCdYQkpMyCWmrsvvlQCN81onJzNl-JPHftuUM5ITg-x_XLSXU8UrfpYrhKHwqpzS2NwLBPnqjvaYrGRN-8oI8qGcob-bSHLM17hv5GwFJXYCMnbwd'); background-size: cover; background-position: center;">
+<!-- Fallback icon if image fails or just overlay -->
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">nest_cam_iq_outdoor</span>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-background-light dark:border-background-dark">
+                    Ativo
+                </div>
+</div>
+<h1 class="text-text-main dark:text-white text-2xl font-bold leading-tight mb-2">Equilíbrio do Ninho</h1>
+<p class="text-text-secondary dark:text-gray-400 text-base font-normal leading-relaxed max-w-[280px]">
+                O ninho analisou a rotina e encontrou formas de deixar a semana mais leve para todos.
+            </p>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 flex flex-col gap-6 px-4 pb-24">
+<!-- Card 1: Task Reassignment (Load Balancing) -->
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div class="p-5 flex flex-col gap-4">
+<!-- Header with Context -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">insights</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Otimização de Terça</p>
+<p class="text-sm text-text-secondary dark:text-gray-400">Rotina da Noite</p>
+</div>
+</div>
+<!-- Insight Content -->
+<div class="flex flex-col gap-2">
+<p class="text-text-main dark:text-white text-lg font-medium leading-snug">
+                            Parece que <span class="text-primary font-bold">João</span> tem atrasado em "Lavar a louça" às terças.
+                        </p>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
+                            Que tal sugerir essa tarefa para a <span class="font-bold text-text-main dark:text-gray-200">Maria</span> na quarta, ou mover para o João na manhã seguinte?
+                        </p>
+</div>
+<!-- Visual Representation of Swap -->
+<div class="flex items-center justify-between bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full border-2 border-white dark:border-slate-600 shadow-sm bg-cover bg-center" data-alt="Avatar of Joao, a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbr-VMY8GcP5uUT-BUvhVdasZAIidvv1f3mFOR5fDUq4Loh1kXnJvQ3yYOfhk8afcddAMkM7Wf0z8keE7N5tx4VSZxUyjwtIqIGL3vpe7MajErVs0M6SqTDWEIL53435xEGuuyZdwC_YGkTvf91CzYJxQ-6ahyl7hnXV3bIsSxsRnXHxGbnwJoEgQxX_DbjMuVXeHfAcc9h7_h2EHVKEbofKojt7E_h7qU8HY9NSe59_KOxilSWpTsfL1xpXMRM4c7_lgf9e_gCMcp');">
+</div>
+<span class="text-xs font-medium text-text-secondary">João</span>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 flex-1 px-2">
+<div class="h-[2px] w-full bg-slate-200 dark:bg-slate-600 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white dark:bg-surface-dark p-1 rounded-full border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-sm block">sync_alt</span>
+</div>
+</div>
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-wide">Sugerido</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full border-2 border-primary shadow-sm bg-cover bg-center ring-2 ring-primary/20" data-alt="Avatar of Maria, a smiling woman" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0qUdDpevXfzk3V7HGK0QJP8ELJ47uOfhrF72LOAydKL3ws0c7_RioMMhTwA6KVOHw2SlMpYnHil1Prrp1Ju6KDZC1Nc9bHoG7LUgfmCDYMuoWUleoaTZ-QZ_R05Sz7UADjMd8Z6j0SkQm9ol9PxcJymVbpxoxEXhi26IIv4s7Z5gN1UnbNfP7Uls6LlroGBIMt1w2ihy9arHLG94HYMBPouF0ubk0yV-yej6BJj4s4rRxLZVsMMuwrRYIkv5_3o8FDcswnQX3lon7');">
+</div>
+<span class="text-xs font-bold text-primary">Maria</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="grid grid-cols-2 gap-3 mt-1">
+<button class="flex items-center justify-center h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:bg-slate-200 transition-colors">
+                            Agora não
+                        </button>
+<button class="flex items-center justify-center h-11 rounded-full bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:bg-sky-500 transition-colors">
+                            Aceitar Troca
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Support Suggestion (Cooperative) -->
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 dark:border-slate-800 transition-all hover:shadow-md">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-nest-orange"></div>
+<div class="p-5 flex flex-col gap-4">
+<!-- Header -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-nest-orange">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-nest-orange uppercase tracking-wider">Fortalecer o Ninho</p>
+<p class="text-sm text-text-secondary dark:text-gray-400">Carga Mental</p>
+</div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-2">
+<p class="text-text-main dark:text-white text-lg font-medium leading-snug">
+                            A tarefa "Tirar o lixo" está sempre com a <span class="text-nest-orange font-bold">Ana</span>.
+                        </p>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
+                            Que tal o <span class="font-bold text-text-main dark:text-gray-200">Pedro</span> fazer hoje para dar um descanso e ganhar pontos de cooperação?
+                        </p>
+</div>
+<!-- Visual Reward Preview -->
+<div class="flex items-center gap-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 p-3 rounded-xl border border-orange-100 dark:border-orange-900/30">
+<div class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-nest-orange">star</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-nest-orange uppercase">Recompensa</span>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">+50 Pontos de União</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="grid grid-cols-2 gap-3 mt-1">
+<button class="flex items-center justify-center h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:bg-slate-200 transition-colors">
+                            Manter Ana
+                        </button>
+<button class="flex items-center justify-center h-11 rounded-full bg-nest-orange text-white text-sm font-bold shadow-lg shadow-orange-500/30 hover:bg-orange-500 transition-colors">
+                            Pedro assume
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Quick Tip (Simple) -->
+<div class="rounded-2xl bg-primary/10 dark:bg-primary/5 p-4 flex items-start gap-4 border border-primary/10">
+<div class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark flex items-center justify-center shrink-0 shadow-sm text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-text-main dark:text-white">Dica Rápida</p>
+<p class="text-sm text-text-secondary dark:text-gray-400 leading-relaxed">
+                        Famílias que revisam a agenda no domingo à noite reduzem o estresse em 40%. Quer agendar um lembrete?
+                    </p>
+<button class="mt-2 self-start text-xs font-bold text-primary hover:underline">
+                        Agendar Lembrete
+                    </button>
+</div>
+</div>
+<!-- Footer Quote -->
+<div class="text-center pb-4 pt-2 opacity-60">
+<p class="text-xs text-text-secondary italic">"Pequenas mudanças, grandes harmonias."</p>
+</div>
+</div>
+<!-- Bottom Navigation (Fixed) -->
+<div class="absolute bottom-0 left-0 w-full bg-white dark:bg-surface-dark border-t border-slate-100 dark:border-slate-800 px-6 py-4 flex justify-between items-center z-50 rounded-t-[2rem] shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Início</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-medium">Agenda</span>
+</button>
+<!-- Center FAB -->
+<div class="relative -top-8">
+<button class="size-14 bg-primary rounded-full shadow-xl shadow-primary/40 flex items-center justify-center text-white transform transition hover:scale-105 active:scale-95 ring-4 ring-white dark:ring-surface-dark">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-current">lightbulb</span>
+<span class="text-[10px] font-bold">Dicas</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</button>
+</div>
+</div>
+</body></html>

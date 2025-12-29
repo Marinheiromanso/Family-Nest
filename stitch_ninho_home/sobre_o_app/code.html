@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sobre o App - Family Nest</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee7c2b",
+              "background-light": "#fdfbf7",
+              "background-dark": "#221810",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2c2119",
+              "text-main": "#1b130d",
+              "text-secondary": "#9a6c4c",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "Noto Sans", "sans-serif"],
+              "body": ["Spline Sans", "Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "2.5rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+                "soft": "0 4px 20px -2px rgba(238, 124, 43, 0.1)",
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner look if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display text-text-main dark:text-background-light pb-10">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 pb-2 justify-between">
+<button class="text-text-main dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Sobre o App</h2>
+</header>
+<!-- Hero Section with Logo -->
+<div class="flex flex-col items-center pt-8 pb-6 px-4 animate-fade-in">
+<div class="relative w-32 h-32 mb-6 rounded-[2rem] shadow-soft overflow-hidden bg-white dark:bg-surface-dark flex items-center justify-center p-1 border-4 border-white dark:border-surface-dark">
+<div class="w-full h-full rounded-[1.6rem] bg-cover bg-center" data-alt="Illustration of a happy bird family in a nest representing the logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgMzBXi7Cl-0hvW_AlE7BYJc4cp9h3FNeA2wbb39wbN-MWGPFOIygW3WFiTFSWa_EZJAgARmf3F8ihBQPmsgObxLrw5XBt2JimF3cgfWnkau7rMb9G3wU6lEnR4vJP-NryfTqy2gFcQQTzHSgItCyBGifn6zPlWY1EZoPKlIKnRY2jluiUarOQli54SVHxAIYJpVlW-wqlnPHuw49AR554vUu-bhOkhdwAyeGr2Rh6dQoG_S8-8qBFlmdByE8GCNj6DbZ70CPIqWE9");'>
+</div>
+</div>
+<h1 class="text-text-main dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center">Family Nest</h1>
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium leading-normal pt-2 text-center">Versão 1.2.0 (Build 45)</p>
+</div>
+<!-- Mission Card -->
+<div class="px-4 mb-6">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-black/5 dark:border-white/5">
+<div class="flex items-center gap-3 mb-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Nossa Missão</h3>
+</div>
+<p class="text-text-main/80 dark:text-gray-300 text-base font-normal leading-relaxed">
+                    Transformar tarefas diárias em momentos de diversão e união familiar. Acreditamos que colaborar pode ser um jogo onde todos ganham, fortalecendo laços enquanto cuidamos do nosso lar.
+                </p>
+</div>
+</div>
+<!-- Credits Section -->
+<div class="px-4 space-y-4 mb-8">
+<h3 class="text-text-main dark:text-white text-lg font-bold px-2">Quem faz acontecer</h3>
+<div class="grid grid-cols-1 gap-3">
+<!-- Team Member / Role -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl flex items-center justify-between border border-black/5 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-[20px]">brush</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-text-secondary uppercase tracking-wider">Design</p>
+<p class="text-sm font-medium text-text-main dark:text-white">Ana Silva &amp; João Souza</p>
+</div>
+</div>
+</div>
+<!-- Team Member / Role -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl flex items-center justify-between border border-black/5 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-text-secondary uppercase tracking-wider">Desenvolvimento</p>
+<p class="text-sm font-medium text-text-main dark:text-white">Pedro Santos, Maria Oliveira</p>
+</div>
+</div>
+</div>
+<!-- Team Member / Role -->
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl flex items-center justify-between border border-black/5 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-[20px]">bug_report</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-text-secondary uppercase tracking-wider">QA &amp; Testes</p>
+<p class="text-sm font-medium text-text-main dark:text-white">Família Ferreira</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action / Socials -->
+<div class="px-4 mb-10">
+<div class="flex flex-col items-center justify-center gap-6 py-6 border-t border-black/5 dark:border-white/5">
+<p class="text-text-main dark:text-white font-medium text-center">Acompanhe nossas novidades</p>
+<div class="flex gap-4">
+<a class="group flex items-center justify-center w-14 h-14 rounded-full bg-surface-light dark:bg-surface-dark border border-black/5 dark:border-white/10 shadow-sm hover:scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:text-primary/80">language</span>
+</a>
+<a class="group flex items-center justify-center w-14 h-14 rounded-full bg-surface-light dark:bg-surface-dark border border-black/5 dark:border-white/10 shadow-sm hover:scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:text-primary/80">photo_camera</span>
+</a>
+<a class="group flex items-center justify-center w-14 h-14 rounded-full bg-surface-light dark:bg-surface-dark border border-black/5 dark:border-white/10 shadow-sm hover:scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:text-primary/80">mail</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-col items-center gap-3 px-4 pb-8 text-center">
+<div class="flex gap-4">
+<a class="text-xs font-medium text-text-secondary hover:text-primary transition-colors" href="#">Termos de Uso</a>
+<span class="text-text-secondary/30">•</span>
+<a class="text-xs font-medium text-text-secondary hover:text-primary transition-colors" href="#">Política de Privacidade</a>
+</div>
+<p class="text-[10px] text-text-secondary/60 mt-2">
+                © 2024 Family Nest Inc. Todos os direitos reservados.
+            </p>
+<!-- Decorative bottom element to show warmth -->
+<div class="w-16 h-1 rounded-full bg-primary/20 mt-4"></div>
+</div>
+<div class="h-5 bg-background-light dark:bg-background-dark"></div>
+</div>
+</body></html>

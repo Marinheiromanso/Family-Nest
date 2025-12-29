@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notificações do Ninho</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6a",
+                        "primary-dark": "#0ea34e",
+                        "background-light": "#fdfbf7", /* Updated to user preference */
+                        "background-dark": "#102217",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-50 transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="flex items-center justify-between p-6 pb-2 bg-background-light dark:bg-background-dark z-10 sticky top-0">
+<button class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm text-slate-800 dark:text-white hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Notificações</h2>
+<button class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm text-primary hover:bg-gray-50 transition-colors" title="Marcar todas como lidas">
+<span class="material-symbols-outlined">done_all</span>
+</button>
+</header>
+<!-- Chips / Filters -->
+<div class="w-full overflow-x-auto no-scrollbar py-4 pl-6">
+<div class="flex gap-3 pr-6 w-max">
+<!-- Chip: Todas (Active) -->
+<button class="flex h-10 items-center gap-2 rounded-full bg-slate-900 dark:bg-white px-5 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-white dark:text-slate-900">filter_list</span>
+<span class="text-sm font-semibold text-white dark:text-slate-900">Todas</span>
+</button>
+<!-- Chip: Missões -->
+<button class="flex h-10 items-center gap-2 rounded-full bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-slate-500 dark:text-slate-400">check_circle</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Missões</span>
+</button>
+<!-- Chip: Sugestões -->
+<button class="flex h-10 items-center gap-2 rounded-full bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-slate-500 dark:text-slate-400">lightbulb</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Sugestões</span>
+</button>
+<!-- Chip: Avisos -->
+<button class="flex h-10 items-center gap-2 rounded-full bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-700 px-5 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-slate-500 dark:text-slate-400">notifications</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Avisos</span>
+</button>
+</div>
+</div>
+<!-- Notification List -->
+<main class="flex-1 flex flex-col gap-6 px-6 pb-24 overflow-y-auto">
+<!-- Section: Novas -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 pl-1">
+<div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Novas</h3>
+</div>
+<!-- Card 1: Urgent Alert -->
+<div class="group relative flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition-all hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-500">
+<span class="material-symbols-outlined filled">home_health</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold text-slate-900 dark:text-white leading-tight">O ninho precisa de atenção</p>
+<span class="text-xs font-medium text-primary whitespace-nowrap ml-2">2 min</span>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                Algumas tarefas essenciais da manhã ainda não foram concluídas.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Card 2: Suggestion -->
+<div class="group relative flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition-all hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary-dark dark:text-primary">
+<span class="material-symbols-outlined filled">lightbulb</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold text-slate-900 dark:text-white leading-tight">Sugestão do Ninho</p>
+<span class="text-xs font-medium text-slate-400 whitespace-nowrap ml-2">1h</span>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                Que tal o João fazer <span class="font-semibold text-slate-700 dark:text-slate-200">'Tirar o lixo'</span> esta semana?
+                            </p>
+<!-- Interactive Action -->
+<div class="mt-3 flex gap-2">
+<button class="rounded-full bg-primary px-4 py-1.5 text-xs font-bold text-slate-900 transition-colors hover:bg-primary-dark hover:text-white">
+                                    Aceitar
+                                </button>
+<button class="rounded-full bg-slate-100 dark:bg-slate-800 px-4 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
+                                    Ignorar
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Hoje -->
+<div class="flex flex-col gap-3">
+<h3 class="pl-1 text-xs font-bold uppercase tracking-wider text-slate-400">Hoje</h3>
+<!-- Card 3: Task Pending -->
+<div class="group relative flex w-full flex-col gap-3 rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition-all hover:shadow-md opacity-90 hover:opacity-100">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-500">
+<span class="material-symbols-outlined">local_laundry_service</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold text-slate-900 dark:text-white leading-tight">Missão pendente</p>
+<span class="text-xs font-medium text-slate-400 whitespace-nowrap ml-2">4h</span>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                A tarefa 'Lavar roupa' ainda pode ser feita para ganhar pontos hoje.
+                            </p>
+<div class="mt-2 flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 cursor-pointer">
+<span>Ver detalhes</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Positive -->
+<div class="group relative flex w-full flex-col gap-3 rounded-xl bg-gradient-to-br from-white to-[#f0fdf4] dark:from-surface-dark dark:to-surface-dark p-4 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition-all hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#dcfce7] text-[#166534]">
+<span class="material-symbols-outlined filled">spa</span>
+</div>
+<div class="flex flex-1 flex-col justify-center min-h-[48px]">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold text-slate-900 dark:text-white leading-tight">Tudo em ordem por aqui</p>
+<span class="text-xs font-medium text-slate-400 whitespace-nowrap ml-2">6h</span>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                O ninho está calmo e limpo. Bom descanso!
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Ontem -->
+<div class="flex flex-col gap-3">
+<h3 class="pl-1 text-xs font-bold uppercase tracking-wider text-slate-400">Ontem</h3>
+<!-- Card 5: Completed -->
+<div class="group relative flex w-full flex-col gap-3 rounded-xl bg-white/60 dark:bg-surface-dark/60 p-4 shadow-sm ring-1 ring-slate-100 dark:ring-slate-800 transition-all">
+<div class="flex items-start gap-4 opacity-70">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-base font-bold text-slate-700 dark:text-slate-300 leading-tight">Missão "Louça" concluída</p>
+<span class="text-xs font-medium text-slate-400 whitespace-nowrap ml-2">1d</span>
+</div>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-500 leading-relaxed">
+                                Parabéns, a cozinha ficou impecável ontem à noite.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="sticky bottom-0 z-20 w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-surface-dark px-6 py-3">
+<ul class="flex items-center justify-between">
+<li>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">nest_multi_room</span>
+<span class="text-[10px] font-bold">Ninho</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">checklist</span>
+<span class="text-[10px] font-bold">Tarefas</span>
+</a>
+</li>
+<li>
+<div class="relative -top-6 flex size-14 items-center justify-center rounded-full bg-primary text-slate-900 shadow-lg shadow-green-200 dark:shadow-none ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+</li>
+<li>
+<a class="flex flex-col items-center justify-center gap-1 text-primary dark:text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined filled text-2xl">notifications</span>
+<span class="absolute right-0 top-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-surface-dark"></span>
+</div>
+<span class="text-[10px] font-bold">Avisos</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+<span class="text-[10px] font-bold">Perfil</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Decorative Background Elements -->
+<div class="pointer-events-none absolute top-0 left-0 -z-10 h-64 w-64 rounded-full bg-primary/5 blur-[80px]"></div>
+<div class="pointer-events-none absolute bottom-20 right-0 -z-10 h-64 w-64 rounded-full bg-blue-400/5 blur-[80px]"></div>
+</div>
+</body></html>

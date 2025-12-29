@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compartilhar App - Family Nest</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee7c2b",
+              "background-light": "#fdfbf7",
+              "background-dark": "#221810",
+              "surface-light": "#ffffff",
+              "surface-dark": "#36291f",
+              "text-main": "#1b130d",
+              "text-secondary": "#6b5c52",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "sans-serif"],
+              "body": ["Spline Sans", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "2.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pt-12 pb-2 bg-background-light dark:bg-background-dark z-10 sticky top-0">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">
+                Compartilhar App
+            </h2>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24 px-6 flex flex-col items-center">
+<!-- Hero Illustration -->
+<div class="w-full mt-6 mb-2 flex justify-center">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-primary/10 dark:bg-primary/5">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract illustration of colorful geometric birds interacting joyfully in a nest" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCPATeE-fTU635pCx6umwvbm3UcTLWT1NbAmGfY-BZCh-4OiCLTRW9YKdnJp-VyYWckTzIZhEMHk7ETIdu1ZRk_XwuUV9XcHayhogRRTNGKyhXNNPXsjxdCCEIhDGmnVeWwPySLjaIiSVDOBeOvVtgtHmSw3ZcTJZ_t3SD1MpyTkIntk7o5ZBHpkyKcYAwgr-mMt_Oeve-lLGz30cvPuL45J6559FoUlRe-lRveXDqBSZL02OBZsZ6jqyaAIn-_jg1zbabgVij1sxU"); mix-blend-mode: multiply; opacity: 0.8;'>
+</div>
+<!-- Overlay gradient for better text integration if needed later, kept subtle here -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent opacity-20"></div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center text-center mt-6 mb-8">
+<h1 class="text-text-main dark:text-white text-[28px] font-bold leading-tight mb-3">
+                    Compartilhe a<br/>Harmonia do Ninho!
+                </h1>
+<p class="text-text-secondary dark:text-gray-300 text-base font-normal leading-relaxed max-w-xs">
+                    Ajude outras famílias a organizarem suas rotinas e a fortalecerem seus laços. Juntos, o ninho fica mais forte!
+                </p>
+</div>
+<!-- Referral Card -->
+<div class="w-full bg-surface-light dark:bg-surface-dark rounded-2xl p-5 shadow-sm border border-[#eaddd5] dark:border-[#4a3a2f] mb-8 relative overflow-hidden group">
+<!-- Decorative background accent -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110 duration-500"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-text-secondary dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Seu código de convite</span>
+<div class="flex items-baseline gap-2">
+<span class="text-primary text-3xl font-bold tracking-widest font-mono">FAMILIA123</span>
+</div>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary/10 hover:bg-primary/20 active:bg-primary/30 h-12 px-4 transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">content_copy</span>
+<span class="text-primary text-sm font-bold">Copiar Código</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Floating Action Area -->
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12 pb-8 px-6 z-20">
+<button class="w-full bg-primary hover:bg-[#d96d22] active:bg-[#c25e1b] text-white font-bold text-lg rounded-full h-14 shadow-lg shadow-primary/30 flex items-center justify-center gap-3 transition-all transform active:scale-95">
+<span class="material-symbols-outlined filled">ios_share</span>
+<span>Compartilhar Family Nest</span>
+</button>
+</div>
+<!-- Bottom Navigation (Context) -->
+<!-- Just visual to simulate the app environment -->
+<nav class="hidden bg-surface-light dark:bg-surface-dark border-t border-[#eaddd5] dark:border-[#36291f] px-6 py-3 justify-between items-center text-xs font-medium text-text-secondary dark:text-gray-400">
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span>Início</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[24px]">checklist</span>
+<span>Rotina</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-1">favorite</span>
+<span>Indicados</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span>Ajustes</span>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="nestGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8CB89F"/>
+      <stop offset="100%" style="stop-color:#36e27b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="96" cy="96" r="88" fill="url(#nestGradient)"/>
+  <circle cx="96" cy="96" r="80" fill="#fdfbf7" opacity="0.1"/>
+  <g transform="translate(48, 48)">
+    <path d="M48 8C26.4 8 8 26.4 8 48C8 69.6 26.4 88 48 88C69.6 88 88 69.6 88 48C88 26.4 69.6 8 48 8ZM48 16C65.2 16 80 30.8 80 48C80 57.2 75.6 65.6 68.8 71.2C66.4 60 56.8 52 45.6 52C34.4 52 24.8 60 22.4 71.2C15.6 65.6 11.2 57.2 11.2 48C11.2 30.8 26 16 48 16Z" fill="white"/>
+    <circle cx="48" cy="36" r="12" fill="white"/>
+  </g>
+</svg>

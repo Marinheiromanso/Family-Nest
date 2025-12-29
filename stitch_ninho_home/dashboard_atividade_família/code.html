@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest Dashboard</title>
+<!-- Google Fonts: Spline Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "background-light": "#fdfbf7", /* User requested specific hex */
+                        "background-dark": "#221810",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c2018",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b130d] dark:text-[#f0e6dd] font-display min-h-screen flex flex-col transition-colors duration-200">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-4 py-3 flex items-center justify-between border-b border-black/5 dark:border-white/5">
+<button class="p-2 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="text-xs font-medium text-primary uppercase tracking-widest opacity-80">Dashboard</span>
+<h1 class="text-lg font-bold leading-tight">Família Silva</h1>
+</div>
+<button class="p-2 -mr-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-[#9a6c4c] dark:text-[#d4bca5] transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden pb-24 w-full max-w-md mx-auto">
+<!-- Nest Status Card -->
+<div class="p-4">
+<div class="group relative overflow-hidden rounded-xl bg-surface-light dark:bg-surface-dark shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-none transition-all">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary">nest_cam_iq_outdoor</span>
+</div>
+<div class="relative z-10 flex flex-col @xl:flex-row items-center gap-6 p-6">
+<div class="w-24 h-24 shrink-0 rounded-full border-4 border-[#e7d9cf] dark:border-[#4a3b32] overflow-hidden bg-[#fff8f0]">
+<img alt="Abstract warm gradient representing a cozy nest atmosphere" class="w-full h-full object-cover opacity-90" data-alt="Abstract warm gradient representing a cozy nest atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNrhglyUznTXXZtoRpFynifi0rCzeUTa2fow0jrwsr_fjpiOA4Usz3XjabnPyfgxpJQCFp_UH6Qdrd9t97h8CExNcg1DgVyW5xW-J504fM3UfvyORWmnE2Tfy4knsZ2Wpl9_zOq8776erqYNA87Yl41JVv8e-EuR73WkD7PlQJ0p8kDV4VhwfsFCtyIQy9b5Ob585mJH1uspNeywCbIdmfwqk-yPwtjNafSQIZAJArqd3PTDOeec4HNYJJHzeXpdpuMhAEcZxULpYt"/>
+</div>
+<div class="flex flex-col text-center @xl:text-left items-center @xl:items-start flex-1">
+<div class="inline-flex items-center gap-1 bg-[#eefcf2] dark:bg-[#1a3324] text-[#2e7d32] dark:text-[#81c784] px-3 py-1 rounded-full text-xs font-bold mb-2">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                            Ninho Calmo!
+                        </div>
+<p class="text-2xl font-bold leading-tight mb-1">Tudo em ordem.</p>
+<p class="text-[#9a6c4c] dark:text-[#a8907d] text-sm leading-relaxed">
+                            As tarefas estão em dia e o clima está harmonioso. Continuem assim!
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- XP & Progress Section -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between mb-2 px-1">
+<h2 class="text-lg font-bold">Nível da Família</h2>
+<button class="text-primary text-sm font-semibold flex items-center gap-0.5">
+                    Detalhes <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-black/5 dark:border-white/5">
+<div class="flex justify-between items-end mb-3">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-wider text-[#9a6c4c] dark:text-[#a8907d] font-semibold">Nível Atual</span>
+<div class="flex items-center gap-2">
+<span class="text-3xl font-bold text-primary">5</span>
+<span class="text-lg font-medium">Pássaros Construtores</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-[#1b130d] dark:text-white">850</span>
+<span class="text-xs text-[#9a6c4c] dark:text-[#a8907d]">/ 1000 XP</span>
+</div>
+</div>
+<div class="relative h-4 w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-1" style="width: 85%;">
+<div class="w-2 h-2 bg-white/40 rounded-full"></div>
+</div>
+</div>
+<p class="mt-3 text-center text-xs font-medium text-[#9a6c4c] dark:text-[#a8907d]">
+                    🎉 Faltam apenas <span class="text-primary font-bold">150 XP</span> para desbloquear novos avatares!
+                </p>
+</div>
+</div>
+<!-- Activity Chart (Weekly) -->
+<div class="px-4 py-4">
+<h2 class="text-lg font-bold mb-3 px-1">Atividade Semanal</h2>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-black/5 dark:border-white/5">
+<div class="flex items-end justify-between h-32 gap-2">
+<!-- Monday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/40 group-hover:bg-primary/60 transition-all rounded-t-lg" style="height: 40%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Seg</span>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/40 group-hover:bg-primary/60 transition-all rounded-t-lg" style="height: 65%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Ter</span>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/40 group-hover:bg-primary/60 transition-all rounded-t-lg" style="height: 30%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Qua</span>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/70 group-hover:bg-primary/90 transition-all rounded-t-lg" style="height: 85%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Qui</span>
+</div>
+<!-- Friday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/50 group-hover:bg-primary/70 transition-all rounded-t-lg" style="height: 50%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Sex</span>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary group-hover:bg-primary/90 transition-all rounded-t-lg" style="height: 95%"></div>
+</div>
+<span class="text-xs font-bold text-primary">Sab</span>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col items-center gap-2 flex-1 group cursor-pointer">
+<div class="w-full bg-[#f0e6dd] dark:bg-[#3d2e24] rounded-t-lg relative h-full flex items-end overflow-hidden">
+<div class="w-full bg-primary/20 group-hover:bg-primary/40 transition-all rounded-t-lg" style="height: 10%"></div>
+</div>
+<span class="text-xs font-medium text-[#9a6c4c]">Dom</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-center gap-2 text-xs text-[#9a6c4c] dark:text-[#a8907d]">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Missões concluídas por dia (todos os membros)</span>
+</div>
+</div>
+</div>
+<!-- Recent Missions (Feed) -->
+<div class="px-4 py-2">
+<h2 class="text-lg font-bold mb-3 px-1">Últimas Missões</h2>
+<div class="flex flex-col gap-3">
+<!-- Mission Item 1 -->
+<div class="flex items-center gap-3 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-transparent dark:border-white/5">
+<div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Portrait of a young boy smiling" class="h-full w-full object-cover" data-alt="Portrait of a young boy smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWIjPR4J1WrqAkEX2fAAtFK84Vs_EePeyS56LeWBFEOG5nLN4sIcSUjKCw_ojc_D2e-NkQF2I81KCfgD928mXwMsj_mVYPg9U1b_9vEbW407EINQEKjtV36xUPFu3ji7_Y6WBm5oapUxtApDYcMDtdcDJocg3NQNRVja4QRIHHlfg3-BPQbc_xUYLe9OSDSqaEc31lwBZWRLJMzfNgKM6fTtSWLf90HfGh-_0T9kS5HwaBCnIhUt8g5D0bu4pr0_K6NE_70txHU5IS"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate"><span class="font-bold">Pedro</span> lavou a louça</p>
+<p class="text-xs text-[#9a6c4c] dark:text-[#a8907d]">Há 10 minutos</p>
+</div>
+<div class="bg-[#fff4e6] dark:bg-[#3d2e24] text-primary px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        +50 XP
+                    </div>
+</div>
+<!-- Mission Item 2 -->
+<div class="flex items-center gap-3 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-transparent dark:border-white/5">
+<div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Portrait of a woman smiling" class="h-full w-full object-cover" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiNxlJolLUIhwjAZkUpm7gP0QU4VqhoEMNDUAg6rY5en9O8oUMowRXLFU5YWaiO7pl19VTyb4uq3N-Ua9QMLi74edS0bpyihYkvImM5EalbN6CpHS9CdEXcqIDhD7CX3WIcs3vFnkNvsILs3uGfqPEEWzGVPNfWQDtPPKlx9IfD28_X7UjxPxcYGcDaZsFZmw5aFxcj9VRpe0qCkmfPSC9omRXq9JNNFcRgMCkYFyw93nupwsq4td1yJIBGzgvDXFs-F6LFqHOT6Ys"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate"><span class="font-bold">Mãe</span> organizou a sala</p>
+<p class="text-xs text-[#9a6c4c] dark:text-[#a8907d]">Há 45 minutos</p>
+</div>
+<div class="bg-[#fff4e6] dark:bg-[#3d2e24] text-primary px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        +30 XP
+                    </div>
+</div>
+<!-- Mission Item 3 -->
+<div class="flex items-center gap-3 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-transparent dark:border-white/5">
+<div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Portrait of a man smiling" class="h-full w-full object-cover" data-alt="Portrait of a man smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwCfZNQb8vp_mJ9qQsKJqCrx9BtP36p9jbwhEWLfPoH4s8pXs--JnyEv00nfaQO8ccM4beEiBsmQNIYEnshrPPC_SW-1afq6IobrYIeAbCXegAYTIcGB6Kh9FWu6NEG8NXV0goPxl3-LHENcjaax6Ee0hk6_h4YZP3tM9eCWhVVBVK3fg-1n-88NgmKz-l0jxp4L2sywTgphOchA25sqGvKwb1VsarFgw3H7jAK0Q-DbMipPl05NmmjdTqXJ9t6fUlHnFlv1dCAxMn"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate"><span class="font-bold">Pai</span> regou as plantas</p>
+<p class="text-xs text-[#9a6c4c] dark:text-[#a8907d]">Há 2 horas</p>
+</div>
+<div class="bg-[#fff4e6] dark:bg-[#3d2e24] text-primary px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        +20 XP
+                    </div>
+</div>
+</div>
+</div>
+<!-- Nest Thought Banner -->
+<div class="p-4">
+<div class="bg-primary/10 dark:bg-primary/20 rounded-2xl p-4 flex gap-4 items-start border border-primary/20">
+<div class="p-2 bg-primary/20 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-primary mb-1">Pensamento do Ninho</h3>
+<p class="text-sm leading-snug italic text-[#5c402e] dark:text-[#e0cfc1]">
+                        "Uma pequena ajuda de cada um transforma a casa inteira. Hoje é dia de cooperar!"
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-40 bg-white/90 dark:bg-[#1a120b]/90 backdrop-blur-md border-t border-black/5 dark:border-white/5 pb-5 pt-2 max-w-md mx-auto left-0 right-0">
+<div class="flex justify-around items-center">
+<button class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined filled text-[26px]">home</span>
+<span class="text-[10px] font-bold">Ninho</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-[#9a6c4c] dark:text-[#8a7566] hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">check_box</span>
+<span class="text-[10px] font-medium">Missões</span>
+</button>
+<div class="relative -top-5">
+<button class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-[0_4px_12px_rgba(238,124,43,0.4)] hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 p-2 text-[#9a6c4c] dark:text-[#8a7566] hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">emoji_events</span>
+<span class="text-[10px] font-medium">Prêmios</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-[#9a6c4c] dark:text-[#8a7566] hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">group</span>
+<span class="text-[10px] font-medium">Membros</span>
+</button>
+</div>
+</nav>
+<script>
+        // Simple theme toggle logic for demonstration
+        // In a real app, this would check system preference or local storage
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+           // Optional: uncomment to auto-detect dark mode
+           // document.documentElement.classList.add('dark');
+           // document.documentElement.classList.remove('light');
+        }
+    </script>
+</body></html>

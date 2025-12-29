@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Convidar Membros</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "primary-dark": "#d96615",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#221810",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d211a",
+                        "text-primary": "#1b130d",
+                        "text-secondary": "#634c3f",
+                        "text-placeholder": "#9a6c4c",
+                        "border-color": "#e7d9cf",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom scrollbar hide for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex justify-center w-full">
+<!-- Mobile Container -->
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative shadow-xl overflow-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 flex items-center justify-between border-b border-border-color/30 dark:border-white/5">
+<button aria-label="Voltar" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-primary dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-text-primary dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Convidar Membros</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center px-6 pt-6 pb-24 overflow-y-auto no-scrollbar">
+<!-- Hero Illustration -->
+<div class="w-32 h-32 mb-6 relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl transform scale-75"></div>
+<img alt="Cute stylized bird nest icon" class="w-full h-full object-cover rounded-2xl shadow-sm relative z-10 mask-squircle border-4 border-white dark:border-surface-dark" data-alt="Cute stylized bird nest icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyk2G9bQU8vzX8hEF1OV5tzBMmxrHjj2AXWg8J5PHWxnelBjI-gahDj0XcpJUDulOTTqLenKIEvJNX20QvBuUDqKQpvD0PPj2eyStTP7435YPBSR9v-JaI4BYPs4_e9PA50Q7Onm7wN-vYi7fBZ5-o8n_LWr5c7sP_8A7M4Td71ftjZVTftd3sGjkhnmMc4HnsGyE6tHcmUSc-8KtoG-SXPHzbik3U-JzVEJkw7Btmb6CdzGSX7UM4lL-_-wxYqZ5omM6GWTaqefdl"/>
+<!-- Decorative element -->
+<div class="absolute -top-2 -right-2 bg-white dark:bg-surface-dark p-1.5 rounded-full shadow-md z-20">
+<span class="material-symbols-outlined text-primary text-xl">favorite</span>
+</div>
+</div>
+<!-- Headline -->
+<div class="text-center mb-8">
+<h2 class="text-text-primary dark:text-white text-[28px] font-bold leading-tight mb-3 tracking-tight">Convide para o Ninho!</h2>
+<p class="text-text-secondary dark:text-gray-300 text-base font-normal leading-relaxed max-w-[280px] mx-auto">
+                    Traga sua família para o jogo! Envie o link abaixo para começarem a organizar a rotina juntos.
+                </p>
+</div>
+<!-- Link Generation Card -->
+<div class="w-full bg-white dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-border-color dark:border-white/5 mb-8">
+<label class="block text-xs font-bold text-text-placeholder uppercase tracking-wider mb-2 ml-1">Seu Link Único</label>
+<div class="flex items-center gap-2 mb-4">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-[20px]">link</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3.5 bg-background-light dark:bg-black/20 border-border-color dark:border-white/10 rounded-xl text-text-primary dark:text-white text-sm font-medium focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all truncate" readonly="" type="text" value="familynest.app/invite/8a29c..."/>
+</div>
+<button aria-label="Copiar link" class="flex items-center justify-center w-12 h-12 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl transition-colors active:scale-95 shrink-0">
+<span class="material-symbols-outlined text-2xl">content_copy</span>
+</button>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-full transition-all shadow-lg shadow-primary/20 active:scale-95 text-base">
+<span class="material-symbols-outlined">ios_share</span>
+<span>Compartilhar Link</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative w-full flex items-center gap-4 mb-8">
+<div class="h-px bg-border-color dark:bg-white/10 flex-1"></div>
+<span class="text-xs font-medium text-text-placeholder uppercase tracking-wider bg-background-light dark:bg-background-dark px-2">Ou por e-mail</span>
+<div class="h-px bg-border-color dark:bg-white/10 flex-1"></div>
+</div>
+<!-- Email Invite Section -->
+<div class="w-full space-y-4">
+<div class="bg-white dark:bg-surface-dark rounded-xl p-1 shadow-sm border border-border-color dark:border-white/5 flex items-center focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="pl-4 text-text-placeholder">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-text-primary dark:text-white placeholder:text-text-placeholder py-3.5 px-3 text-base leading-normal w-full" placeholder="Digite o e-mail do familiar" type="email"/>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 text-text-primary dark:text-white font-bold py-3.5 px-6 rounded-full border border-border-color dark:border-white/10 transition-colors active:scale-95">
+<span>Enviar Convite</span>
+</button>
+</div>
+</main>
+<!-- Bottom Safe Area Spacer -->
+<div class="h-6 w-full bg-background-light dark:bg-background-dark"></div>
+</div>
+<!-- Toast Notification (Hidden by default, visual representation only) -->
+<!-- 
+    <div class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-surface-dark text-white px-6 py-3 rounded-full shadow-xl flex items-center gap-3 z-50 animate-bounce">
+        <span class="material-symbols-outlined text-green-400">check_circle</span>
+        <span class="text-sm font-medium">Link copiado!</span>
+    </div>
+    -->
+</body></html>

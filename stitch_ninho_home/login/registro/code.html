@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Login</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee7c2b",
+                        "primary-dark": "#d06015",
+                        "background-light": "#fdfbf7", // Specific warm off-white requested
+                        "background-dark": "#221810",
+                        "text-main": "#4a382d", // Warm dark brown
+                        "text-secondary": "#9a6c4c", // Softer brown
+                        "input-bg": "#f3ece7",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display transition-colors duration-200">
+<div class="relative flex flex-col flex-1 w-full max-w-md mx-auto group/design-root overflow-x-hidden no-scrollbar">
+<!-- Header / Logo Section -->
+<div class="flex flex-col items-center justify-center pt-12 pb-6 px-6 text-center">
+<div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-size: 48px;">nest_multi_room</span>
+</div>
+<h1 class="text-text-main dark:text-white text-3xl font-bold tracking-tight leading-tight mb-2">
+                Bem-vindo ao Ninho
+            </h1>
+<p class="text-text-secondary dark:text-gray-400 text-lg font-normal leading-relaxed">
+                Organize sua rotina familiar com diversão.
+            </p>
+</div>
+<!-- Login Form -->
+<div class="flex flex-col gap-5 px-6 py-4 w-full">
+<!-- Email Field -->
+<label class="flex flex-col w-full">
+<span class="text-text-main dark:text-gray-200 text-sm font-medium leading-normal pb-2 ml-1">E-mail</span>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-text-secondary dark:text-gray-500 material-symbols-outlined">mail</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-text-main dark:text-white dark:bg-white/10 focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-input-bg focus:border-none h-14 placeholder:text-text-secondary/70 dark:placeholder:text-gray-500 pl-12 pr-4 text-base font-normal transition-all" placeholder="nome@exemplo.com" type="email" value=""/>
+</div>
+</label>
+<!-- Password Field -->
+<label class="flex flex-col w-full">
+<span class="text-text-main dark:text-gray-200 text-sm font-medium leading-normal pb-2 ml-1">Senha</span>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-text-secondary dark:text-gray-500 material-symbols-outlined">lock</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-text-main dark:text-white dark:bg-white/10 focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-input-bg focus:border-none h-14 placeholder:text-text-secondary/70 dark:placeholder:text-gray-500 pl-12 pr-12 text-base font-normal transition-all" placeholder="Digite sua senha" type="password" value=""/>
+<button class="absolute right-4 text-text-secondary dark:text-gray-500 hover:text-primary transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</label>
+<!-- Forgot Password -->
+<div class="flex justify-end w-full">
+<a class="text-primary text-sm font-medium hover:underline transition-all" href="#">Esqueceu a senha?</a>
+</div>
+<!-- Login Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-primary hover:bg-primary-dark text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm mt-2">
+<span class="truncate">Entrar</span>
+</button>
+</div>
+<!-- Social Login Divider -->
+<div class="flex flex-col items-center px-6 py-4">
+<div class="flex items-center w-full gap-2">
+<div class="h-px bg-gray-200 dark:bg-gray-700 flex-1"></div>
+<p class="text-text-secondary dark:text-gray-500 text-xs font-medium">ou entre com</p>
+<div class="h-px bg-gray-200 dark:bg-gray-700 flex-1"></div>
+</div>
+<div class="flex gap-4 mt-6">
+<button class="h-12 w-12 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-full flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+<!-- Google Icon Placeholder (using material symbol as fallback/representation) -->
+<img alt="Google" class="w-5 h-5" data-alt="Google Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDueO-jpK_YOKk6VOyPa5ILEZmIRxX7lm-XwSmjFLHM9p0ymTSzrY6l4pX5BkU2vEypEbPTU8MiVWFfJU22NeFCLCTSOWDBhlsImLjUteb6_0RrtThYwiQQEe6LbNstyGLJwlBYkcbYPDo4UfnP_trd1tjCP2bhCmymCMQ8CH0fIff-8GJO89VR_5ONmDMXyzRJt2mFUwsxYxBXKPUiPqeRNVKVbVpjBiodyvzjBNWbr5lS-05iKV4iq8tCpuHMBt9lJeI-7D7zd77d"/>
+</button>
+<button class="h-12 w-12 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-full flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+<!-- Apple Icon Placeholder -->
+<span class="material-symbols-outlined text-black dark:text-white" style="font-size: 24px;">ios</span>
+</button>
+<button class="h-12 w-12 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-full flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+<!-- Facebook Icon Placeholder -->
+<span class="material-symbols-outlined text-blue-600" style="font-size: 24px;">social_leaderboard</span>
+</button>
+</div>
+</div>
+<!-- Spacer to push content up if screen is tall -->
+<div class="flex-1"></div>
+<!-- Registration Section -->
+<div class="flex flex-col items-center pb-8 pt-4 px-6">
+<div class="bg-primary/5 dark:bg-white/5 rounded-3xl p-6 w-full flex flex-col items-center text-center">
+<p class="text-text-main dark:text-gray-200 text-base font-medium mb-4">
+                    Novo por aqui? Crie sua conta
+                </p>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-white dark:bg-transparent border border-primary text-primary dark:text-primary hover:bg-primary/5 dark:hover:bg-primary/10 text-base font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Começar Agora</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

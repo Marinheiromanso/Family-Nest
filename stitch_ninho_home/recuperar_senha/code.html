@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Nest - Recuperar Senha</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee7c2b",
+              "background-light": "#fdfbf7", /* Updated to match user request */
+              "background-dark": "#221810",
+              "text-main-light": "#1b130d",
+              "text-main-dark": "#f8f7f6",
+              "text-secondary-light": "#6d5b50",
+              "text-secondary-dark": "#b0a69e",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", 
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display antialiased overflow-x-hidden selection:bg-primary/30">
+<!-- Main Content Container -->
+<div class="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-md mx-auto relative z-10">
+<!-- Logo / Illustration Section -->
+<div class="mb-8 relative group">
+<div class="w-32 h-32 bg-white dark:bg-white/5 rounded-full shadow-sm flex items-center justify-center relative overflow-hidden ring-4 ring-primary/10">
+<!-- Abstract Bird/Nest Logo Representation -->
+<div class="w-full h-full bg-center bg-cover" data-alt="Family Nest App Logo cute bird icon illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaAAL4xcVF7wDCXPMVWip4nNdBY1LvLg_XAUEeaok3aeitdzDitUSAktYAn_sUT6nsL9bCXr-e7ptERzMjxkGOo8EE0E4IWaY4GOUKYP6VN7VRX7RG7LTGJGvKSIkn3c7lXslPlCFiY8cU8SJo4hp51xydtO7A9os6BoOxBIIW2hMy1wS12q_WVCnRA53rstqZwT1uGooJblTnaz7F4ueoyqUXuxyL4Clx3n-cF4vYbhbLHVzYTb6XOhdZZqssOqWW0ICukwr2Esif');">
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -right-2 -top-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white shadow-lg animate-bounce" style="animation-duration: 3s;">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+</div>
+<!-- Text Section -->
+<div class="text-center w-full mb-8">
+<h1 class="text-text-main-light dark:text-text-main-dark text-3xl font-bold tracking-tight mb-3">
+                Recuperar Senha
+            </h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-relaxed max-w-[280px] mx-auto">
+                Não se preocupe! Informe seu e-mail para receber um link mágico de redefinição.
+            </p>
+</div>
+<!-- Form Section -->
+<div class="w-full space-y-6">
+<!-- Email Input -->
+<div class="relative group">
+<label class="sr-only" for="email">E-mail</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/60 dark:text-primary/80">mail</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-white/5 border-2 border-transparent focus:border-primary/30 hover:shadow-md transition-all duration-300 rounded-full text-text-main-light dark:text-text-main-dark placeholder:text-text-secondary-light/50 dark:placeholder:text-text-secondary-dark/50 focus:ring-0 text-base" id="email" name="email" placeholder="seu@email.com" type="email" value=""/>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white font-bold text-lg py-4 rounded-full shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group">
+<span>Enviar Link</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Back to Login Link -->
+<div class="mt-8 pt-4">
+<a class="inline-flex items-center gap-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors font-medium text-sm py-2 px-4 rounded-full hover:bg-primary/5" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Voltar ao Login</span>
+</a>
+</div>
+</div>
+<!-- Decorative Background Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-0">
+<!-- Top Left blob -->
+<div class="absolute -top-[10%] -left-[10%] w-[50%] pt-[50%] bg-primary/5 rounded-full blur-3xl opacity-60"></div>
+<!-- Bottom Right blob -->
+<div class="absolute -bottom-[10%] -right-[10%] w-[60%] pt-[60%] bg-primary/10 rounded-full blur-3xl opacity-60"></div>
+</div>
+</body></html>
