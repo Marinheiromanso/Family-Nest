@@ -177,6 +177,30 @@ export async function deleteMember(familyId: string, memberId: string) {
   }
 }
 
+export async function addMemberXP(familyId: string, memberId: string, xpAmount: number) {
+  try {
+    const memberDoc = await getDoc(doc(db, 'families', familyId, 'members', memberId));
+    if (!memberDoc.exists()) {
+      // Se o membro não existe, apenas retorna sem erro
+      return { newXP: 0, error: null };
+    }
+
+    const currentXP = memberDoc.data().xp || 0;
+    const currentCompletedMissions = memberDoc.data().completedMissions || 0;
+    const newXP = currentXP + xpAmount;
+
+    await updateDoc(doc(db, 'families', familyId, 'members', memberId), {
+      xp: newXP,
+      completedMissions: currentCompletedMissions + 1,
+      updatedAt: serverTimestamp(),
+    });
+
+    return { newXP, error: null };
+  } catch (error: any) {
+    return { newXP: 0, error: error.message };
+  }
+}
+
 // ==================== MISSION OPERATIONS ====================
 
 export async function createMission(familyId: string, data: Partial<Mission>) {

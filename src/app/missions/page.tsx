@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Timestamp } from 'firebase/firestore';
 import {
   Header,
   Card,
@@ -17,15 +18,65 @@ import {
   ChipGroup,
   EmptyState,
 } from '@/components/ui';
-import { useFamily } from '@/hooks';
+import { useAuth, useFamily } from '@/hooks';
+import { useFamilyStore } from '@/store';
+import { updateMission, addFamilyXP, addMemberXP } from '@/lib/firebase/firestore';
 import { CATEGORIES } from '@/types';
 
 type FilterType = 'all' | 'pending' | 'completed';
 
 export default function MissionsPage() {
-  const { missions, members } = useFamily();
+  const { user } = useAuth();
+  const { family, missions, members } = useFamily();
+  const { updateMission: updateMissionLocal } = useFamilyStore();
   const [filter, setFilter] = useState<FilterType>('all');
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
+  const [completingId, setCompletingId] = useState<string | null>(null);
+
+  const handleQuickComplete = async (e: React.MouseEvent, missionId: string, xpReward: number) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('handleQuickComplete chamado!', { missionId, xpReward, family: !!family, user: !!user });
+    alert(`Completando missão: ${missionId}`);
+    
+    if (!family || !user) {
+      console.error('family ou user é null', { family, user });
+      alert('Erro: família ou usuário não encontrado');
+      return;
+    }
+    
+    setCompletingId(missionId);
+    
+    try {
+      console.log('Atualizando missão no Firebase...');
+      // Atualiza missão no Firebase
+      const result = await updateMission(family.id, missionId, {
+        status: 'completed',
+        completedBy: user.uid,
+        completedAt: Timestamp.now(),
+      });
+      console.log('Resultado updateMission:', result);
+
+      // Adiciona XP à família
+      await addFamilyXP(family.id, xpReward);
+      console.log('XP adicionado');
+
+      // Atualiza estado local
+      updateMissionLocal(missionId, {
+        status: 'completed',
+        completedBy: user.uid,
+      });
+      console.log('Estado local atualizado');
+      
+      alert('Missão completada com sucesso!');
+    } catch (error) {
+      console.error('Error completing mission:', error);
+      alert(`Erro: ${error}`);
+    } finally {
+      setCompletingId(null);
+    }
+  };
 
   const filteredMissions = missions.filter((mission) => {
     if (filter === 'pending' && mission.status !== 'pending') return false;
@@ -201,18 +252,24 @@ export default function MissionsPage() {
                             </div>
                           </div>
 
-                          {/* Status indicator */}
-                          <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                              mission.status === 'completed'
-                                ? 'bg-primary-green text-white'
-                                : 'bg-accent-sand text-text-muted'
-                            }`}
-                          >
-                            <span className="material-symbols-outlined">
-                              {mission.status === 'completed' ? 'check' : 'chevron_right'}
-                            </span>
-                          </div>
+                          {/* Status indicator / Complete button */}
+                          {mission.status === 'completed' ? (
+                            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-green text-white">
+                              <span className="material-symbols-outlined">check</span>
+                            </div>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={(e) => handleQuickComplete(e, mission.id, mission.xpReward)}
+                              disabled={completingId === mission.id}
+                              className="w-10 h-10 rounded-full flex items-center justify-center bg-accent-sand text-text-muted hover:bg-primary-green hover:text-white transition-colors disabled:opacity-50"
+                              title="Marcar como concluída"
+                            >
+                              <span className="material-symbols-outlined">
+                                {completingId === mission.id ? 'progress_activity' : 'check'}
+                              </span>
+                            </button>
+                          )}
                         </CardContent>
                       </Card>
                     </Link>

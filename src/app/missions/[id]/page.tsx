@@ -3,15 +3,21 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter, useParams } from 'next/navigation';
-import { Header, Card, CardContent, Button } from '@/components/ui';
+import { Timestamp } from 'firebase/firestore';
+import { Header, Card, CardContent, Button, LoadingScreen } from '@/components/ui';
+import { useAuth, useFamily } from '@/hooks';
 import { useFamilyStore } from '@/store';
+import { updateMission, addFamilyXP, addMemberXP } from '@/lib/firebase/firestore';
 import { CATEGORIES } from '@/types';
 
 export default function MissionDetailsPage() {
   const router = useRouter();
   const params = useParams();
   const missionId = params.id as string;
-  const { missions, members, completeMission } = useFamilyStore();
+  
+  const { user, isLoading: authLoading } = useAuth();
+  const { family, missions, members } = useFamily();
+  const { updateMission: updateMissionLocal } = useFamilyStore();
   
   const mission = missions.find(m => m.id === missionId);
   const assignedMember = mission?.assignedTo?.length ? members.find(m => mission.assignedTo.includes(m.id)) : null;
@@ -20,19 +26,51 @@ export default function MissionDetailsPage() {
   const [isCompleting, setIsCompleting] = useState(false);
 
   const handleComplete = async (completedById: string) => {
-    if (!mission) return;
+    if (!mission || !family) return;
     
     setIsCompleting(true);
     
     try {
-      completeMission(mission.id, completedById);
+      // Atualiza missão no Firebase
+      const { error } = await updateMission(family.id, mission.id, {
+        status: 'completed',
+        completedBy: completedById,
+        completedAt: Timestamp.now(),
+      });
+
+      if (error) {
+        console.error('Erro ao completar missão:', error);
+        setIsCompleting(false);
+        return;
+      }
+
+      // Adiciona XP à família
+      await addFamilyXP(family.id, mission.xpReward);
+
+      // Adiciona XP ao membro que completou
+      await addMemberXP(family.id, completedById, mission.xpReward);
+
+      // Atualiza estado local
+      updateMissionLocal(mission.id, {
+        status: 'completed',
+        completedBy: completedById,
+      });
+
       router.back();
     } catch (error) {
       console.error('Error completing mission:', error);
-    } finally {
       setIsCompleting(false);
     }
   };
+
+  if (authLoading) {
+    return <LoadingScreen message="Carregando..." />;
+  }
+
+  if (!user) {
+    router.push('/login');
+    return <LoadingScreen message="Redirecionando..." />;
+  }
 
   if (!mission) {
     return (
