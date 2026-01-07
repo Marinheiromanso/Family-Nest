@@ -42,7 +42,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-background-light page-container">
-      <Header title="Dashboard" showMenu showNotifications />
+      <Header title="Dashboard" showNotifications />
 
       <main className="px-4 pb-24">
         {/* Status Card */}

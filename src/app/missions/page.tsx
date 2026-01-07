@@ -90,7 +90,7 @@ export default function MissionsPage() {
 
   return (
     <div className="min-h-screen bg-background-light page-container">
-      <Header title="Missões" showMenu showNotifications />
+      <Header title="Missões" showNotifications />
 
       <main className="px-4 pb-24">
         {/* Stats */}

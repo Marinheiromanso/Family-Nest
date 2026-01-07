@@ -101,7 +101,7 @@ Vamos juntos deixar nosso lar mais organizado! 🌿`;
 
   return (
     <div className="min-h-screen bg-background-light page-container">
-      <Header title="Família" showMenu showNotifications />
+      <Header title="Família" showNotifications />
 
       <main className="px-4 pb-24">
         {/* Family Info Card */}
