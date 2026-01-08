@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Timestamp } from 'firebase/firestore';
 import { Button, LoadingScreen } from '@/components/ui';
 import { useAuth, useFamily } from '@/hooks';
@@ -10,6 +10,7 @@ import { CATEGORIES, MissionCategory } from '@/types';
 
 export default function TestNewMissionPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { user, isLoading: authLoading } = useAuth();
   const { family } = useFamily();
 
@@ -18,6 +19,15 @@ export default function TestNewMissionPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [debug, setDebug] = useState('');
+
+  // Pre-select category from URL parameter
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam && CATEGORIES.find(c => c.id === categoryParam)) {
+      setCategory(categoryParam as MissionCategory);
+      setDebug(`Categoria pré-selecionada: ${categoryParam}`);
+    }
+  }, [searchParams]);
 
   const handleCategoryClick = (catId: MissionCategory) => {
     console.log('Categoria clicada:', catId);

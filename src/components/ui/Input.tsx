@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-text-main mb-2">
+          <label className="block text-sm font-medium text-text-main dark:text-white mb-2">
             {label}
           </label>
         )}
@@ -32,6 +32,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               'w-full h-14 bg-input-bg border border-input-border rounded-full',
               'text-text-main placeholder:text-text-muted',
+              'dark:bg-surface-dark dark:border-text-muted/20 dark:text-white dark:placeholder-text-muted',
               'focus:outline-none focus:ring-2 focus:ring-primary-orange focus:border-transparent',
               'transition-all duration-200',
               leftIcon && 'pl-12',

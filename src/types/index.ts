@@ -78,6 +78,7 @@ export type MissionCategory =
   | 'compras'
   | 'manutencao'
   | 'cuidados'
+  | 'contas'
   | 'outros';
 
 export type MissionFrequency = 'once' | 'daily' | 'weekly' | 'monthly';
@@ -137,6 +138,7 @@ export const CATEGORIES: CategoryInfo[] = [
   { id: 'compras', name: 'Compras', icon: 'shopping_cart', color: '#C9B6D1' },
   { id: 'manutencao', name: 'Manutenção', icon: 'handyman', color: '#9a6c4c' },
   { id: 'cuidados', name: 'Cuidados', icon: 'favorite', color: '#EA7A7A' },
+  { id: 'contas', name: 'Contas à Pagar', icon: 'receipt_long', color: '#ee7c2b' },
   { id: 'outros', name: 'Outros', icon: 'more_horiz', color: '#948D83' },
 ];
 

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import '@/styles/globals.css';
+import { DarkModeScript } from '@/components/DarkModeScript';
 
 export const metadata: Metadata = {
   title: 'Family Nest',
@@ -46,6 +47,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <DarkModeScript />
         {children}
       </body>
     </html>

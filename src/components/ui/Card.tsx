@@ -11,9 +11,9 @@ interface CardProps {
 
 export function Card({ children, className, variant = 'default', onClick }: CardProps) {
   const variants = {
-    default: 'bg-surface-light shadow-soft',
-    elevated: 'bg-surface-light shadow-card',
-    outlined: 'bg-surface-light border border-input-border',
+    default: 'bg-surface-light shadow-soft dark:bg-surface-dark dark:shadow-none',
+    elevated: 'bg-surface-light shadow-card dark:bg-surface-dark dark:shadow-none',
+    outlined: 'bg-surface-light border border-input-border dark:bg-surface-dark dark:border-text-muted/20',
   };
 
   return (
@@ -51,7 +51,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className }: CardTitleProps) {
   return (
-    <h3 className={cn('text-lg font-semibold text-text-main', className)}>
+    <h3 className={cn('text-lg font-semibold text-text-main dark:text-white', className)}>
       {children}
     </h3>
   );

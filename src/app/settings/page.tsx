@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -27,6 +27,25 @@ export default function SettingsPage() {
   const [progressUpdates, setProgressUpdates] = useState(true);
   const [smartSuggestions, setSmartSuggestions] = useState(true);
   const [sounds, setSounds] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Load dark mode preference on mount
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setDarkMode(isDark);
+  }, []);
+
+  // Handle dark mode toggle
+  const handleDarkModeToggle = (enabled: boolean) => {
+    setDarkMode(enabled);
+    if (enabled) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    }
+  };
 
   const handleLogout = async () => {
     await signOut();
@@ -48,13 +67,23 @@ export default function SettingsPage() {
         >
           <Card className="mb-6" variant="elevated">
             <CardContent className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary-green/20 to-primary-lime/20 rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-3xl text-primary-green">
-                  nest_multi_room
-                </span>
-              </div>
+              {family?.photoURL ? (
+                <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 shadow-md flex-shrink-0">
+                  <img
+                    src={family.photoURL}
+                    alt={family.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-green/20 to-primary-lime/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="material-symbols-outlined text-3xl text-primary-green">
+                    nest_multi_room
+                  </span>
+                </div>
+              )}
               <div className="flex-1">
-                <h2 className="font-semibold text-text-main">
+                <h2 className="font-semibold text-text-main dark:text-white">
                   {family?.name || 'Meu Ninho'}
                 </h2>
                 <div className="flex items-center gap-2 mt-1">
@@ -144,6 +173,13 @@ export default function SettingsPage() {
           <h3 className="text-sm font-medium text-text-muted mb-3 px-1">PREFERÊNCIAS</h3>
           <Card>
             <CardContent className="divide-y divide-accent-sand/50">
+              <SettingsToggle
+                icon="dark_mode"
+                label="Modo Escuro"
+                description="Ativar tema escuro no aplicativo"
+                checked={darkMode}
+                onChange={handleDarkModeToggle}
+              />
               <SettingsItem
                 icon="language"
                 label="Idioma"

@@ -15,12 +15,12 @@ export default function WelcomePage() {
 
       {/* Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 relative z-10">
-        {/* Nest Illustration */}
+        {/* Logo */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8"
+          className="mb-12"
         >
           <div className="relative w-48 h-48">
             {/* Nest background circle */}
@@ -57,67 +57,35 @@ export default function WelcomePage() {
           </div>
         </motion.div>
 
-        {/* Text content */}
+        {/* Buttons */}
         <motion.div
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mb-8"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="w-full max-w-sm space-y-4 px-6"
         >
-          <h1 className="text-4xl font-bold text-text-main mb-3 font-display">
-            Family Nest
-          </h1>
-          <p className="text-text-muted text-lg max-w-xs mx-auto">
-            Organize as tarefas da casa em família de forma divertida e colaborativa
-          </p>
-        </motion.div>
-
-        {/* Features */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex gap-4 mb-12"
-        >
-          <div className="flex items-center gap-2 text-sm text-text-muted">
-            <span className="material-symbols-outlined text-primary-green text-lg">check_circle</span>
-            Missões diárias
-          </div>
-          <div className="flex items-center gap-2 text-sm text-text-muted">
-            <span className="material-symbols-outlined text-primary-orange text-lg">emoji_events</span>
-            Recompensas
-          </div>
-        </motion.div>
-
-        {/* Page indicators */}
-        <div className="flex gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-primary-orange" />
-          <span className="w-2 h-2 rounded-full bg-accent-sand" />
-          <span className="w-2 h-2 rounded-full bg-accent-sand" />
-        </div>
-      </div>
-
-      {/* Bottom actions */}
-      <motion.div
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="p-6 space-y-4 safe-area-bottom"
-      >
-        <Link href="/register" className="block">
-          <Button className="w-full" size="lg">
-            <span className="material-symbols-outlined mr-2">add</span>
-            Criar Meu Ninho
-          </Button>
-        </Link>
-        
-        <p className="text-center text-text-muted text-sm">
-          Já tem uma conta?{' '}
-          <Link href="/login" className="text-primary-orange font-medium hover:underline">
-            Entrar
+          <Link href="/register" className="block">
+            <Button className="w-full" size="lg" variant="primary">
+              <span className="material-symbols-outlined mr-2">person_add</span>
+              Novo Cadastro
+            </Button>
           </Link>
-        </p>
-      </motion.div>
+
+          <Link href="/login" className="block">
+            <Button className="w-full" size="lg" variant="outline">
+              <span className="material-symbols-outlined mr-2">login</span>
+              Login
+            </Button>
+          </Link>
+
+          <Link href="/create-nest" className="block">
+            <Button className="w-full" size="lg" variant="secondary">
+              <span className="material-symbols-outlined mr-2">add</span>
+              Criar Meu Ninho
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
     </div>
   );
 }

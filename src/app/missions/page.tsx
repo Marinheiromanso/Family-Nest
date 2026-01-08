@@ -23,13 +23,13 @@ import { useFamilyStore } from '@/store';
 import { updateMission, addFamilyXP, addMemberXP } from '@/lib/firebase/firestore';
 import { CATEGORIES } from '@/types';
 
-type FilterType = 'all' | 'pending' | 'completed';
+type FilterType = 'pending' | 'completed' | 'bills';
 
 export default function MissionsPage() {
   const { user } = useAuth();
   const { family, missions, members } = useFamily();
   const { updateMission: updateMissionLocal } = useFamilyStore();
-  const [filter, setFilter] = useState<FilterType>('all');
+  const [filter, setFilter] = useState<FilterType>('pending');
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const [completingId, setCompletingId] = useState<string | null>(null);
 
@@ -37,114 +37,116 @@ export default function MissionsPage() {
     e.preventDefault();
     e.stopPropagation();
     
-    console.log('handleQuickComplete chamado!', { missionId, xpReward, family: !!family, user: !!user });
-    alert(`Completando missão: ${missionId}`);
-    
     if (!family || !user) {
-      console.error('family ou user é null', { family, user });
-      alert('Erro: família ou usuário não encontrado');
+      console.error('family or user is null', { family, user });
       return;
     }
     
     setCompletingId(missionId);
     
     try {
-      console.log('Atualizando missão no Firebase...');
-      // Atualiza missão no Firebase
-      const result = await updateMission(family.id, missionId, {
+      // Update mission in Firebase
+      await updateMission(family.id, missionId, {
         status: 'completed',
         completedBy: user.uid,
         completedAt: Timestamp.now(),
       });
-      console.log('Resultado updateMission:', result);
 
-      // Adiciona XP à família
+      // Add XP to family
       await addFamilyXP(family.id, xpReward);
-      console.log('XP adicionado');
 
-      // Atualiza estado local
+      // Update local state
       updateMissionLocal(missionId, {
         status: 'completed',
         completedBy: user.uid,
       });
-      console.log('Estado local atualizado');
       
-      alert('Missão completada com sucesso!');
+      // Wait a moment to show completion animation then filter will hide it
+      setTimeout(() => {
+        setCompletingId(null);
+      }, 500);
     } catch (error) {
       console.error('Error completing mission:', error);
-      alert(`Erro: ${error}`);
-    } finally {
       setCompletingId(null);
     }
   };
 
   const filteredMissions = missions.filter((mission) => {
+    // Filter by type
     if (filter === 'pending' && mission.status !== 'pending') return false;
     if (filter === 'completed' && mission.status !== 'completed') return false;
-    if (categoryFilter && mission.category !== categoryFilter) return false;
+    if (filter === 'bills') {
+      // Show only bills (contas) category, regardless of status
+      if (mission.category !== 'contas') return false;
+    }
+    // Apply category filter (except when in bills mode)
+    if (filter !== 'bills' && categoryFilter && mission.category !== categoryFilter) return false;
     return true;
   });
 
   const pendingCount = missions.filter((m) => m.status === 'pending').length;
   const completedCount = missions.filter((m) => m.status === 'completed').length;
+  const billsCount = missions.filter((m) => m.category === 'contas').length;
 
   return (
     <div className="min-h-screen bg-background-light page-container">
       <Header title="Missões" showNotifications />
 
       <main className="px-4 pb-24">
-        {/* Stats */}
-        <div className="flex gap-3 mb-6">
-          <div className="flex-1 bg-accent-attention/10 rounded-3xl p-4 text-center">
-            <span className="text-2xl font-bold text-accent-attention">{pendingCount}</span>
-            <p className="text-xs text-text-muted mt-1">Pendentes</p>
-          </div>
-          <div className="flex-1 bg-primary-green/10 rounded-3xl p-4 text-center">
-            <span className="text-2xl font-bold text-primary-green">{completedCount}</span>
-            <p className="text-xs text-text-muted mt-1">Concluídas</p>
-          </div>
+        {/* Main Filter Buttons */}
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          <button
+            onClick={() => setFilter('pending')}
+            className={`rounded-3xl p-4 text-center transition-all ${
+              filter === 'pending'
+                ? 'bg-accent-attention text-white shadow-lg'
+                : 'bg-accent-attention/10 text-accent-attention hover:bg-accent-attention/20'
+            }`}
+          >
+            <span className="text-2xl font-bold block">{pendingCount}</span>
+            <p className="text-xs mt-1">Pendentes</p>
+          </button>
+          
+          <button
+            onClick={() => setFilter('completed')}
+            className={`rounded-3xl p-4 text-center transition-all ${
+              filter === 'completed'
+                ? 'bg-primary-green text-white shadow-lg'
+                : 'bg-primary-green/10 text-primary-green hover:bg-primary-green/20'
+            }`}
+          >
+            <span className="text-2xl font-bold block">{completedCount}</span>
+            <p className="text-xs mt-1">Concluídas</p>
+          </button>
+          
+          <button
+            onClick={() => setFilter('bills')}
+            className={`rounded-3xl p-4 text-center transition-all ${
+              filter === 'bills'
+                ? 'bg-primary-orange text-white shadow-lg'
+                : 'bg-primary-orange/10 text-primary-orange hover:bg-primary-orange/20'
+            }`}
+          >
+            <span className="material-symbols-outlined text-2xl block">receipt_long</span>
+            <p className="text-xs mt-1">Contas</p>
+          </button>
         </div>
 
-        {/* Filters */}
-        <div className="mb-6">
-          <ChipGroup>
-            <Chip
-              selected={filter === 'all'}
-              onClick={() => setFilter('all')}
-            >
-              Todas
-            </Chip>
-            <Chip
-              selected={filter === 'pending'}
-              onClick={() => setFilter('pending')}
-              icon="pending"
-            >
-              Pendentes
-            </Chip>
-            <Chip
-              selected={filter === 'completed'}
-              onClick={() => setFilter('completed')}
-              icon="check_circle"
-            >
-              Concluídas
-            </Chip>
-          </ChipGroup>
-        </div>
-
-        {/* Category filter */}
-        <div className="mb-6 overflow-x-auto hide-scrollbar -mx-4 px-4">
-          <div className="flex gap-2 w-max">
-            <button
-              onClick={() => setCategoryFilter(null)}
-              className={`px-3 py-2 rounded-full text-sm font-medium transition-colors ${
-                categoryFilter === null
-                  ? 'bg-text-main text-white'
-                  : 'bg-surface-light text-text-muted'
-              }`}
-            >
-              Todas
-            </button>
-            {CATEGORIES.map((cat) => (
+        {/* Category filter - Only show when not in bills mode */}
+        {filter !== 'bills' && (
+          <div className="mb-6 overflow-x-auto hide-scrollbar -mx-4 px-4">
+            <div className="flex gap-2 w-max">
+              <button
+                onClick={() => setCategoryFilter(null)}
+                className={`px-3 py-2 rounded-full text-sm font-medium transition-colors ${
+                  categoryFilter === null
+                    ? 'bg-text-main text-white'
+                    : 'bg-surface-light text-text-muted'
+                }`}
+              >
+                Todas
+              </button>
+              {CATEGORIES.filter(cat => cat.id !== 'contas').map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setCategoryFilter(cat.id)}
@@ -161,8 +163,9 @@ export default function MissionsPage() {
                 {cat.name}
               </button>
             ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Mission List */}
         <AnimatePresence mode="popLayout">
@@ -280,6 +283,16 @@ export default function MissionsPage() {
           )}
         </AnimatePresence>
       </main>
+
+      {/* Floating Action Button */}
+      <Link 
+        href={filter === 'bills' ? '/missions/new?category=contas' : '/missions/new'}
+        className="fixed right-4 bottom-24 z-10"
+      >
+        <button className="w-14 h-14 bg-primary-orange text-white rounded-full shadow-button flex items-center justify-center hover:bg-primary-orange-dark transition-colors">
+          <span className="material-symbols-outlined text-2xl">add</span>
+        </button>
+      </Link>
 
       <BottomNav />
     </div>
